@@ -1,46 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
-  
+  <title>卯卯博客</title>
+  <subtitle>爱生活学编程</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2017-06-18T13:31:03.118Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://oeasy9999.github.io/"/>
+  <updated>2017-06-18T15:39:56.892Z</updated>
+  <id>http://oeasy9999.github.io/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>oeasy9999</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>新文章</title>
-    <link href="http://yoursite.com/2017/06/18/my-new-post/"/>
-    <id>http://yoursite.com/2017/06/18/my-new-post/</id>
+    <title>第一篇文章</title>
+    <link href="http://oeasy9999.github.io/2017/06/18/my-new-post/"/>
+    <id>http://oeasy9999.github.io/2017/06/18/my-new-post/</id>
     <published>2017-06-18T13:17:22.000Z</published>
-    <updated>2017-06-18T13:31:03.118Z</updated>
+    <updated>2017-06-18T15:39:56.892Z</updated>
     
-    <content type="html"><![CDATA[<p>#这里是正文，用markdown写，你可以选择写一段显示在首页的简介后，</p>
+    <content type="html"><![CDATA[<p>#####任意目录下打开DOS窗口</p>
+<ul>
+<li>按住Shift右键—-在此处打开命令窗口<br>#####常见DOS命令</li>
+<li>盘符切换—-d: 回车</li>
+<li>列出当前目录文件或目录—-dir</li>
+<li>创建目录—-md 目录名</li>
+<li>删除目录—-rd 目录名</li>
+<li>删除不为空的目录—-rd /s 目录名 或 rd /s /q 目录名</li>
+<li>返回到根目录—-cd\ 回车</li>
+<li>删除文件—-del 文件名</li>
+<li>清屏—-cls 回车</li>
+<li>退出—-exit</li>
+</ul>
+<p>#####JDK、JRE、JVM关系</p>
+<ul>
+<li>JDK （Java Development Kit Java开发工具包）</li>
+<li>JRE （Java Runtime Environment Java运行环境）</li>
+<li>JVM （Java Virtual Machine Java虚拟机）</li>
+<li>JDK包括JRE，JRE包括JVM</li>
+</ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;#这里是正文，用markdown写，你可以选择写一段显示在首页的简介后，&lt;/p&gt;
-
+      &lt;p&gt;#####任意目录下打开DOS窗口&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;按住Shift右键—-在此处打开命令窗口&lt;br&gt;#####常见DOS命令&lt;/li&gt;
+&lt;li&gt;盘符切换—-d: 回车&lt;/li&gt;
+&lt;li&gt;列出当前目录文件或目录—-dir&lt;/li&gt;
+&lt;li&gt;创建目录—-md 目录名&lt;
     
     </summary>
     
     
-      <category term="文章" scheme="http://yoursite.com/tags/%E6%96%87%E7%AB%A0/"/>
+      <category term="Java" scheme="http://oeasy9999.github.io/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2017/06/18/hello-world/"/>
-    <id>http://yoursite.com/2017/06/18/hello-world/</id>
+    <link href="http://oeasy9999.github.io/2017/06/18/hello-world/"/>
+    <id>http://oeasy9999.github.io/2017/06/18/hello-world/</id>
     <published>2017-06-18T12:06:02.684Z</published>
     <updated>2017-06-18T12:06:02.684Z</updated>
     

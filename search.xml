@@ -3,15 +3,34 @@
   
     
     <entry>
-      <title><![CDATA[新文章]]></title>
+      <title><![CDATA[第一篇文章]]></title>
       <url>/2017/06/18/my-new-post/</url>
-      <content type="html"><![CDATA[<p>#这里是正文，用markdown写，你可以选择写一段显示在首页的简介后，</p>
+      <content type="html"><![CDATA[<p>#####任意目录下打开DOS窗口</p>
+<ul>
+<li>按住Shift右键—-在此处打开命令窗口<br>#####常见DOS命令</li>
+<li>盘符切换—-d: 回车</li>
+<li>列出当前目录文件或目录—-dir</li>
+<li>创建目录—-md 目录名</li>
+<li>删除目录—-rd 目录名</li>
+<li>删除不为空的目录—-rd /s 目录名 或 rd /s /q 目录名</li>
+<li>返回到根目录—-cd\ 回车</li>
+<li>删除文件—-del 文件名</li>
+<li>清屏—-cls 回车</li>
+<li>退出—-exit</li>
+</ul>
+<p>#####JDK、JRE、JVM关系</p>
+<ul>
+<li>JDK （Java Development Kit Java开发工具包）</li>
+<li>JRE （Java Runtime Environment Java运行环境）</li>
+<li>JVM （Java Virtual Machine Java虚拟机）</li>
+<li>JDK包括JRE，JRE包括JVM</li>
+</ul>
 ]]></content>
       
         
         <tags>
             
-            <tag> 文章 </tag>
+            <tag> Java </tag>
             
         </tags>
         
