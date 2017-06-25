@@ -4,9 +4,9 @@
   <subtitle>爱生活学编程</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://oeasy9999.github.io/"/>
+  <link href="http://oeasy.coding.me/"/>
   <updated>2017-06-18T15:39:56.892Z</updated>
-  <id>http://oeasy9999.github.io/</id>
+  <id>http://oeasy.coding.me/</id>
   
   <author>
     <name>oeasy9999</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>第一篇文章</title>
-    <link href="http://oeasy9999.github.io/2017/06/18/my-new-post/"/>
-    <id>http://oeasy9999.github.io/2017/06/18/my-new-post/</id>
+    <link href="http://oeasy.coding.me/2017/06/18/my-new-post/"/>
+    <id>http://oeasy.coding.me/2017/06/18/my-new-post/</id>
     <published>2017-06-18T13:17:22.000Z</published>
     <updated>2017-06-18T15:39:56.892Z</updated>
     
@@ -56,14 +56,14 @@
     </summary>
     
     
-      <category term="Java" scheme="http://oeasy9999.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://oeasy.coding.me/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://oeasy9999.github.io/2017/06/18/hello-world/"/>
-    <id>http://oeasy9999.github.io/2017/06/18/hello-world/</id>
+    <link href="http://oeasy.coding.me/2017/06/18/hello-world/"/>
+    <id>http://oeasy.coding.me/2017/06/18/hello-world/</id>
     <published>2017-06-18T12:06:02.684Z</published>
     <updated>2017-06-18T12:06:02.684Z</updated>
     
