@@ -15,7 +15,12 @@
 <h1 id="元素的显示方式"><a href="#元素的显示方式" class="headerlink" title="元素的显示方式"></a>元素的显示方式</h1><h3 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h3><ul>
 <li>独立成行</li>
 <li>占据一个矩形区域</li>
-<li>有 <code>&lt;h&gt;</code>, </li>
+<li>块级元素会影响页面的布局</li>
+<li>常见元素有 <code>&lt;h&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;div&gt;</code>, <code>&lt;ul&gt;</code><h3 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h3></li>
+<li>不独立成行，可以横向布局</li>
+<li>不占据一个矩形区域</li>
+<li>行内元素不会影响页面布局</li>
+<li>常见元素有 <code>&lt;span&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;u&gt;</code></li>
 </ul>
 ]]></content>
       
