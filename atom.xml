@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://oeasy.coding.me/"/>
-  <updated>2017-08-12T11:15:20.888Z</updated>
+  <updated>2017-08-12T15:59:14.362Z</updated>
   <id>http://oeasy.coding.me/</id>
   
   <author>
@@ -14,6 +14,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTML 基础知识</title>
+    <link href="http://oeasy.coding.me/2017/08/12/HTML-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    <id>http://oeasy.coding.me/2017/08/12/HTML-基础知识/</id>
+    <published>2017-08-12T14:45:35.000Z</published>
+    <updated>2017-08-12T15:59:14.362Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p><em>先说一个比较容易被人忽略的知识点</em></p>
+</blockquote>
+<p>首先，市面上的浏览器有很多，各家浏览器都有自己的解析渲染方式，一旦你的页面没有声明文档的解析类型，不同浏览器就会按各自默认的解析类型渲染页面，从而造成的结果就是同一个页面在不同浏览器上会显示不同的样式，尤其以臭名昭彰的IE浏览器最为辣眼睛。<br><a id="more"></a><br>如何准确地告知浏览器统一以W3C的标准方式渲染页面就是 &lt;!DOCTYPE&gt; 的用处了</p>
+<h1 id="lt-DOCTYPE-gt-声明"><a href="#lt-DOCTYPE-gt-声明" class="headerlink" title="&lt;!DOCTYPE&gt; 声明"></a>&lt;!DOCTYPE&gt; 声明</h1><p>&lt;!DOCTYPE&gt; 不是一个 HTML 标签；它为浏览器提供一项信息（声明），即 HTML 是用什么版本编写的。<br>&lt;!DOCTYPE&gt; 声明没有结束标签。<br>&lt;!DOCTYPE&gt; 声明对大小写不敏感。<br> jsp的话，添加在&lt;%@ page %&gt;的下一行。<br>HTML5只有一种 &lt;!DOCTYPE&gt; 声明：<br><code>&lt;!DOCTYPE html&gt;</code><br>其他HTML4.01<br><code>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;
+&quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</code><br>XHTML 1.0<br><code>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;
+&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</code></p>
+<h1 id="元素的显示方式"><a href="#元素的显示方式" class="headerlink" title="元素的显示方式"></a>元素的显示方式</h1><h3 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h3><ul>
+<li>独立成行</li>
+<li>占据一个矩形区域</li>
+<li>有 <code>&lt;h&gt;</code>, </li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;先说一个比较容易被人忽略的知识点&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;首先，市面上的浏览器有很多，各家浏览器都有自己的解析渲染方式，一旦你的页面没有声明文档的解析类型，不同浏览器就会按各自默认的解析类型渲染页面，从而造成的结果就是同一个页面在不同浏览器上会显示不同的样式，尤其以臭名昭彰的IE浏览器最为辣眼睛。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="HTML基础" scheme="http://oeasy.coding.me/categories/HTML%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="HTML" scheme="http://oeasy.coding.me/tags/HTML/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
