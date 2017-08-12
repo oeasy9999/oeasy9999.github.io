@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://oeasy.coding.me/2017/06/18/my-new-post/</loc>
+    
+    <lastmod>2017-08-12T09:02:36.304Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://oeasy.coding.me/categories/index.html</loc>
     
     <lastmod>2017-06-24T06:57:45.929Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://oeasy.coding.me/tags/index.html</loc>
     
     <lastmod>2017-06-24T06:54:16.123Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://oeasy.coding.me/2017/06/18/my-new-post/</loc>
-    
-    <lastmod>2017-06-18T15:39:56.892Z</lastmod>
     
   </url>
   

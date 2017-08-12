@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://oeasy.coding.me/"/>
-  <updated>2017-06-18T15:39:56.892Z</updated>
+  <updated>2017-08-12T09:02:36.304Z</updated>
   <id>http://oeasy.coding.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://oeasy.coding.me/2017/06/18/my-new-post/"/>
     <id>http://oeasy.coding.me/2017/06/18/my-new-post/</id>
     <published>2017-06-18T13:17:22.000Z</published>
-    <updated>2017-06-18T15:39:56.892Z</updated>
+    <updated>2017-08-12T09:02:36.304Z</updated>
     
     <content type="html"><![CDATA[<p>#####任意目录下打开DOS窗口</p>
 <ul>
@@ -33,10 +33,8 @@
 <li>返回到根目录—-cd\ 回车</li>
 <li>删除文件—-del 文件名</li>
 <li>清屏—-cls 回车</li>
-<li>退出—-exit</li>
-</ul>
-<p>#####JDK、JRE、JVM关系</p>
-<ul>
+<li>退出—-exit<a id="more"></a>
+#####JDK、JRE、JVM关系</li>
 <li>JDK （Java Development Kit Java开发工具包）</li>
 <li>JRE （Java Runtime Environment Java运行环境）</li>
 <li>JVM （Java Virtual Machine Java虚拟机）</li>
@@ -51,7 +49,13 @@
 &lt;li&gt;按住Shift右键—-在此处打开命令窗口&lt;br&gt;#####常见DOS命令&lt;/li&gt;
 &lt;li&gt;盘符切换—-d: 回车&lt;/li&gt;
 &lt;li&gt;列出当前目录文件或目录—-dir&lt;/li&gt;
-&lt;li&gt;创建目录—-md 目录名&lt;
+&lt;li&gt;创建目录—-md 目录名&lt;/li&gt;
+&lt;li&gt;删除目录—-rd 目录名&lt;/li&gt;
+&lt;li&gt;删除不为空的目录—-rd /s 目录名 或 rd /s /q 目录名&lt;/li&gt;
+&lt;li&gt;返回到根目录—-cd\ 回车&lt;/li&gt;
+&lt;li&gt;删除文件—-del 文件名&lt;/li&gt;
+&lt;li&gt;清屏—-cls 回车&lt;/li&gt;
+&lt;li&gt;退出—-exit
     
     </summary>
     

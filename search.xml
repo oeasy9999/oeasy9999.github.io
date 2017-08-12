@@ -16,10 +16,8 @@
 <li>返回到根目录—-cd\ 回车</li>
 <li>删除文件—-del 文件名</li>
 <li>清屏—-cls 回车</li>
-<li>退出—-exit</li>
-</ul>
-<p>#####JDK、JRE、JVM关系</p>
-<ul>
+<li>退出—-exit<a id="more"></a>
+#####JDK、JRE、JVM关系</li>
 <li>JDK （Java Development Kit Java开发工具包）</li>
 <li>JRE （Java Runtime Environment Java运行环境）</li>
 <li>JVM （Java Virtual Machine Java虚拟机）</li>
