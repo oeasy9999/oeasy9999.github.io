@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://oeasy.coding.me/"/>
-  <updated>2017-08-12T09:02:36.304Z</updated>
+  <updated>2017-08-12T11:15:20.888Z</updated>
   <id>http://oeasy.coding.me/</id>
   
   <author>
@@ -16,62 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>第一篇文章</title>
-    <link href="http://oeasy.coding.me/2017/06/18/my-new-post/"/>
-    <id>http://oeasy.coding.me/2017/06/18/my-new-post/</id>
-    <published>2017-06-18T13:17:22.000Z</published>
-    <updated>2017-08-12T09:02:36.304Z</updated>
-    
-    <content type="html"><![CDATA[<p>#####任意目录下打开DOS窗口</p>
-<ul>
-<li>按住Shift右键—-在此处打开命令窗口<br>#####常见DOS命令</li>
-<li>盘符切换—-d: 回车</li>
-<li>列出当前目录文件或目录—-dir</li>
-<li>创建目录—-md 目录名</li>
-<li>删除目录—-rd 目录名</li>
-<li>删除不为空的目录—-rd /s 目录名 或 rd /s /q 目录名</li>
-<li>返回到根目录—-cd\ 回车</li>
-<li>删除文件—-del 文件名</li>
-<li>清屏—-cls 回车</li>
-<li>退出—-exit<a id="more"></a>
-#####JDK、JRE、JVM关系</li>
-<li>JDK （Java Development Kit Java开发工具包）</li>
-<li>JRE （Java Runtime Environment Java运行环境）</li>
-<li>JVM （Java Virtual Machine Java虚拟机）</li>
-<li>JDK包括JRE，JRE包括JVM</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;#####任意目录下打开DOS窗口&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;按住Shift右键—-在此处打开命令窗口&lt;br&gt;#####常见DOS命令&lt;/li&gt;
-&lt;li&gt;盘符切换—-d: 回车&lt;/li&gt;
-&lt;li&gt;列出当前目录文件或目录—-dir&lt;/li&gt;
-&lt;li&gt;创建目录—-md 目录名&lt;/li&gt;
-&lt;li&gt;删除目录—-rd 目录名&lt;/li&gt;
-&lt;li&gt;删除不为空的目录—-rd /s 目录名 或 rd /s /q 目录名&lt;/li&gt;
-&lt;li&gt;返回到根目录—-cd\ 回车&lt;/li&gt;
-&lt;li&gt;删除文件—-del 文件名&lt;/li&gt;
-&lt;li&gt;清屏—-cls 回车&lt;/li&gt;
-&lt;li&gt;退出—-exit
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://oeasy.coding.me/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Hello World</title>
-    <link href="http://oeasy.coding.me/2017/06/18/hello-world/"/>
-    <id>http://oeasy.coding.me/2017/06/18/hello-world/</id>
-    <published>2017-06-18T12:06:02.684Z</published>
-    <updated>2017-06-18T12:06:02.684Z</updated>
+    <link href="http://oeasy.coding.me/2017/08/12/hello-world/"/>
+    <id>http://oeasy.coding.me/2017/08/12/hello-world/</id>
+    <published>2017-08-12T11:14:56.000Z</published>
+    <updated>2017-08-12T11:15:20.888Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
@@ -84,10 +35,63 @@
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;br&gt;
     
     </summary>
     
+      <category term="其他" scheme="http://oeasy.coding.me/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="杂" scheme="http://oeasy.coding.me/tags/%E6%9D%82/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一篇文章</title>
+    <link href="http://oeasy.coding.me/2017/06/18/my-new-post/"/>
+    <id>http://oeasy.coding.me/2017/06/18/my-new-post/</id>
+    <published>2017-06-18T13:17:22.000Z</published>
+    <updated>2017-08-12T11:14:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="任意目录下打开DOS窗口"><a href="#任意目录下打开DOS窗口" class="headerlink" title="任意目录下打开DOS窗口"></a>任意目录下打开DOS窗口</h5><ul>
+<li>按住Shift右键—-在此处打开命令窗口<h5 id="常见DOS命令"><a href="#常见DOS命令" class="headerlink" title="常见DOS命令"></a>常见DOS命令</h5></li>
+<li>盘符切换—-d: 回车</li>
+<li>列出当前目录文件或目录—-dir</li>
+<li>创建目录—-md 目录名</li>
+<li>删除目录—-rd 目录名</li>
+<li>删除不为空的目录—-rd /s 目录名 或 rd /s /q 目录名</li>
+<li>返回到根目录—-cd\ 回车</li>
+<li>删除文件—-del 文件名</li>
+<li>清屏—-cls 回车</li>
+<li>退出—-exit<a id="more"></a>
+<h5 id="JDK、JRE、JVM关系"><a href="#JDK、JRE、JVM关系" class="headerlink" title="JDK、JRE、JVM关系"></a>JDK、JRE、JVM关系</h5></li>
+<li>JDK （Java Development Kit Java开发工具包）</li>
+<li>JRE （Java Runtime Environment Java运行环境）</li>
+<li>JVM （Java Virtual Machine Java虚拟机）</li>
+<li>JDK包括JRE，JRE包括JVM</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h5 id=&quot;任意目录下打开DOS窗口&quot;&gt;&lt;a href=&quot;#任意目录下打开DOS窗口&quot; class=&quot;headerlink&quot; title=&quot;任意目录下打开DOS窗口&quot;&gt;&lt;/a&gt;任意目录下打开DOS窗口&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;按住Shift右键—-在此处打开命令窗口&lt;h5 id=&quot;常见DOS命令&quot;&gt;&lt;a href=&quot;#常见DOS命令&quot; class=&quot;headerlink&quot; title=&quot;常见DOS命令&quot;&gt;&lt;/a&gt;常见DOS命令&lt;/h5&gt;&lt;/li&gt;
+&lt;li&gt;盘符切换—-d: 回车&lt;/li&gt;
+&lt;li&gt;列出当前目录文件或目录—-dir&lt;/li&gt;
+&lt;li&gt;创建目录—-md 目录名&lt;/li&gt;
+&lt;li&gt;删除目录—-rd 目录名&lt;/li&gt;
+&lt;li&gt;删除不为空的目录—-rd /s 目录名 或 rd /s /q 目录名&lt;/li&gt;
+&lt;li&gt;返回到根目录—-cd\ 回车&lt;/li&gt;
+&lt;li&gt;删除文件—-del 文件名&lt;/li&gt;
+&lt;li&gt;清屏—-cls 回车&lt;/li&gt;
+&lt;li&gt;退出—-exit
+    
+    </summary>
+    
+      <category term="JAVA基础" scheme="http://oeasy.coding.me/categories/JAVA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JAVA" scheme="http://oeasy.coding.me/tags/JAVA/"/>
     
   </entry>
   
