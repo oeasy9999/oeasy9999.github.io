@@ -112,10 +112,12 @@
 <meta property="og:url" content="http://oeasy.coding.me/2017/08/12/HTML-基础知识/index.html">
 <meta property="og:site_name" content="卯卯博客">
 <meta property="og:description" content="先说一个比较容易被人忽略的知识点  首先，市面上的浏览器有很多，各家浏览器都有自己的解析渲染方式，一旦你的页面没有声明文档的解析类型，不同浏览器就会按各自默认的解析类型渲染页面，从而造成的结果就是同一个页面在不同浏览器上会显示不同的样式，尤其以臭名昭彰的IE浏览器最为辣眼睛。">
-<meta property="og:updated_time" content="2017-08-12T16:11:16.079Z">
+<meta property="og:image" content="http://oeasy.coding.me/uploads/HTML-基础知识/相对定位效果图.png">
+<meta property="og:updated_time" content="2017-08-13T03:20:27.456Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML 基础知识">
 <meta name="twitter:description" content="先说一个比较容易被人忽略的知识点  首先，市面上的浏览器有很多，各家浏览器都有自己的解析渲染方式，一旦你的页面没有声明文档的解析类型，不同浏览器就会按各自默认的解析类型渲染页面，从而造成的结果就是同一个页面在不同浏览器上会显示不同的样式，尤其以臭名昭彰的IE浏览器最为辣眼睛。">
+<meta name="twitter:image" content="http://oeasy.coding.me/uploads/HTML-基础知识/相对定位效果图.png">
 
 
 
@@ -382,7 +384,14 @@
 <h1 id="lt-DOCTYPE-gt-声明"><a href="#lt-DOCTYPE-gt-声明" class="headerlink" title="&lt;!DOCTYPE&gt; 声明"></a>&lt;!DOCTYPE&gt; 声明</h1><p>&lt;!DOCTYPE&gt; 不是一个 HTML 标签；它为浏览器提供一项信息（声明），即 HTML 是用什么版本编写的。<br>&lt;!DOCTYPE&gt; 声明没有结束标签。<br>&lt;!DOCTYPE&gt; 声明对大小写不敏感。<br> jsp的话，添加在&lt;%@ page %&gt;的下一行。<br>HTML5只有一种 &lt;!DOCTYPE&gt; 声明：<br><code>&lt;!DOCTYPE html&gt;</code><br>其他HTML4.01<br><code>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;
 &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</code><br>XHTML 1.0<br><code>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;
 &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</code></p>
-<h1 id="元素的显示方式"><a href="#元素的显示方式" class="headerlink" title="元素的显示方式"></a>元素的显示方式</h1><h3 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h3><ul>
+<h1 id="绝对定位-相对定位-文档流-文本流"><a href="#绝对定位-相对定位-文档流-文本流" class="headerlink" title="绝对定位 / 相对定位 / 文档流 / 文本流"></a>绝对定位 / 相对定位 / 文档流 / 文本流</h1><h3 id="文档流"><a href="#文档流" class="headerlink" title="文档流"></a>文档流</h3><p>原文是 “normal flow”, 中文翻译为”文档流“，有些误导人，指语言文本从左到右，从上到下显示，即是传统HTML文档的文本布局。</p>
+<blockquote>
+<p>浮动(float), 绝对定位（absolute), 固定定位(fixed)三种方式定位会脱离文档流。可以理解为类似图层的概念，脱离文档流的元素属于上一层，也不会占用之前的空间。</p>
+<h3 id="文本流"><a href="#文本流" class="headerlink" title="文本流"></a>文本流</h3><p>文档流是相当与盒子模型，文本流是相当与文字段落的。<br>元素浮动之后，如果后面还有其他元素会直接在它身下布局，但是文字却会认同浮动元素所占区域，围绕它布局；<br>元素绝对定位后，不仅元素盒子会脱离文档流，文字也会出文本流，那么后面元素的文本也会直接在它后面布局，不会环绕。</p>
+<h3 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h3><p><code>position: relative</code><br>顾名思义，相对定位就是相对一个元素来定位，而这个元素就是自己本身，用<code>left</code>, <code>right</code>, <code>top</code>, <code>bottom</code>进行定位，但相对定位不会脱离文档流，所以元素本身所占的位置会保留。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div style=&quot; width:100px; height:100px; border:1px solid Red;&quot;&gt;div1&lt;/div&gt;</div><div class="line">&lt;div style=&quot; width:100px; height:100px; border:1px solid Green; position:relative; top:-20px; left:50px;&quot;&gt;div2&lt;/div&gt;</div><div class="line">&lt;div style=&quot; width:100px; height:100px; border:1px solid Blue;&quot;&gt;div3&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>效果如下：<br><img src="/uploads/HTML-基础知识/相对定位效果图.png" alt="相对定位效果图"></p>
+<h1 id="块级元素-行内元素"><a href="#块级元素-行内元素" class="headerlink" title="块级元素 / 行内元素"></a>块级元素 / 行内元素</h1><h3 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h3><ul>
 <li>独立成行</li>
 <li>占据一个矩形区域</li>
 <li>块级元素会影响页面的布局</li>
@@ -582,7 +591,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lt-DOCTYPE-gt-声明"><span class="nav-number">1.</span> <span class="nav-text"><!DOCTYPE> 声明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#元素的显示方式"><span class="nav-number">2.</span> <span class="nav-text">元素的显示方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#块级元素"><span class="nav-number">2.0.1.</span> <span class="nav-text">块级元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#行内元素"><span class="nav-number">2.0.2.</span> <span class="nav-text">行内元素</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lt-DOCTYPE-gt-声明"><span class="nav-number">1.</span> <span class="nav-text"><!DOCTYPE> 声明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绝对定位-相对定位-文档流-文本流"><span class="nav-number">2.</span> <span class="nav-text">绝对定位 / 相对定位 / 文档流 / 文本流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文档流"><span class="nav-number">2.0.1.</span> <span class="nav-text">文档流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本流"><span class="nav-number">2.0.2.</span> <span class="nav-text">文本流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相对定位"><span class="nav-number">2.0.3.</span> <span class="nav-text">相对定位</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#块级元素-行内元素"><span class="nav-number">3.</span> <span class="nav-text">块级元素 / 行内元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#块级元素"><span class="nav-number">3.0.1.</span> <span class="nav-text">块级元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#行内元素"><span class="nav-number">3.0.2.</span> <span class="nav-text">行内元素</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
