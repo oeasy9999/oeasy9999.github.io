@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://oeasy.coding.me/"/>
-  <updated>2017-08-16T13:42:11.458Z</updated>
+  <updated>2017-08-16T15:27:04.819Z</updated>
   <id>http://oeasy.coding.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://oeasy.coding.me/2017/08/12/HTML-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
     <id>http://oeasy.coding.me/2017/08/12/HTML-基础知识/</id>
     <published>2017-08-12T14:45:35.000Z</published>
-    <updated>2017-08-16T13:42:11.458Z</updated>
+    <updated>2017-08-16T15:27:04.819Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p><em>先说一个比较容易被人忽略的知识点</em></p>
@@ -76,11 +76,11 @@
 <li>独立成行</li>
 <li>占据一个矩形区域</li>
 <li>块级元素会影响页面的布局</li>
-<li>常见元素有 <code>&lt;h&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;div&gt;</code>, <code>&lt;ul&gt;</code><h3 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h3></li>
+<li>常见元素有 <code>&lt;h&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;div&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;table&gt;</code>, <code>&lt;form&gt;</code><h3 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h3></li>
 <li>不独立成行，可以横向布局</li>
 <li>不占据一个矩形区域</li>
 <li>行内元素不会影响页面布局</li>
-<li>常见元素有 <code>&lt;span&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;u&gt;</code></li>
+<li>常见元素有 <code>&lt;span&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;u&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;br&gt;</code>, <code>&lt;em&gt;</code>,  <code>&lt;img&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;label&gt;</code>, <code>&lt;select&gt;</code>,</li>
 </ul>
 ]]></content>
     
