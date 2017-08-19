@@ -10,7 +10,22 @@
 <p>line-height 属性设置行间的距离（行高）。不允许使用负值。<br>该属性会影响行框的布局。在应用到一个块级元素时，它定义了该元素中基线之间的最小距离而不是最大距离。<br>line-height 与 font-size 的计算值之差（在 CSS 中成为“行间距”）分为两半，分别加到一个文本内容的顶部和底部。可以包含这些内容的最小框就是行框。</p>
 </blockquote>
 <p>刚看到这段话时我是费解的，这里面有太多知识点了，涉及到 行高，行框，基线，font-size，行间距等概念，有必要细说从头，先总结一下几个基本概念</p>
-<h2 id="几个概念"><a href="#几个概念" class="headerlink" title="几个概念"></a>几个概念</h2><h3 id="基线，底线，顶线，中线"><a href="#基线，底线，顶线，中线" class="headerlink" title="基线，底线，顶线，中线"></a>基线，底线，顶线，中线</h3><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<h2 id="几个名词"><a href="#几个名词" class="headerlink" title="几个名词"></a>几个名词</h2><h3 id="x-height"><a href="#x-height" class="headerlink" title="x-height"></a>x-height</h3><p>在西文字体排印学中, x-height 就是指小写字母 ‘x’ 的高度；维基上有格示意图：<br>图<br>按 <a href="http://www.zhangxinxu.com/wordpress/2015/06/about-letter-x-of-css/" target="_blank" rel="external">字母’x’在CSS世界中的角色和故事</a> 这篇文章作者的理解：</p>
+<ul>
+<li>ascender height: 上行线高度</li>
+<li>cap height: 大写字母高度</li>
+<li>median: 中线</li>
+<li>descender height: 下行线高度</li>
+</ul>
+<p>x-height 即是基线和中线之间的距离。<br>而这里median 中线和 vertical-align: middle 又不是一个概念，middle 指的是基线往上 1/2 “x-height” 高度。可以近似为字母 “x” 交叉点的位置。<br>x 不仅衍生出了 x-height 的概念，还进一步衍生出了 ex，1ex 就是一个 x 的高度，类似 1em 就是一个大写字母 M 的宽度。</p>
+<h3 id="基线，底线，顶线和中线"><a href="#基线，底线，顶线和中线" class="headerlink" title="基线，底线，顶线和中线"></a>基线，底线，顶线和中线</h3><p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic2.png"></p>
+<blockquote>
+<p>顶线(top line): 蓝线<br>中线(middle line): 黄线<br>基线(base line): 绿线<br>底线(bottom line): 红线</p>
+</blockquote>
+<p>vertical-align 属性中 top, middle, baseline, bottom 就是和这四条线相关。</p>
+<h3 id="行高，行距与半行距"><a href="#行高，行距与半行距" class="headerlink" title="行高，行距与半行距"></a>行高，行距与半行距</h3><p>行高是指上下文本行的基线间的垂直距离，即图中两条绿线间垂直距离。<br>行距是指一行底线到下一行顶线的垂直距离，即第一行红线和第二行蓝线间的垂直距离。<br>半行距是行距的一半，即区域3垂直距离/2，区域1，2，3，4的距离之和为行高，而区域1，2，4距离之和为字体size，所以半行距也可以这么算：（行高-字体size）/2</p>
+<h3 id="内容区，行内框和行框"><a href="#内容区，行内框和行框" class="headerlink" title="内容区，行内框和行框"></a>内容区，行内框和行框</h3><p>内容区： 底线和顶线包裹的区域<br>行内框，每个行内元素会生成一个行内框，行内框是一个浏览器渲染模型中的一个概念，无法显示出来，在没有其他因素影响的时候（padding等），行内框等于内容区域，而设定行高时行内框高度不变，半行距【（行高-字体size）/2】分别增加/减少到内容区域的上下两边（深蓝色区域）<br>行框（line box），行框是指本行的一个虚拟的矩形框，是浏览器渲染模式中的一个概念，并没有实际显示。行框高度等于本行内所有元素中行内框最大的值（以行高值最大的行内框为基准，其他行内框采用自己的对齐方式向基准对齐，最终计算行框的高度），当有多行内容时，每行都会有自己的行框。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
 <li><a href="http://www.w3cplus.com/css/css-font-metrics-line-height-and-vertical-align.html" target="_blank" rel="external">深入了解CSS字体度量，行高和vertical-align</a></li>
 <li><a href="http://www.cnblogs.com/fengzheng126/archive/2012/05/18/2507632.html" target="_blank" rel="external">深入了解css的行高Line Height属性</a></li>
 <li><a href="http://blog.csdn.net/q121516340/article/details/51483439" target="_blank" rel="external">深入理解 CSS 中的行高与基线</a></li>
