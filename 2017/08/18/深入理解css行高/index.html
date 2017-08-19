@@ -112,12 +112,13 @@
 <meta property="og:url" content="http://oeasy.coding.me/2017/08/18/深入理解css行高/index.html">
 <meta property="og:site_name" content="卯卯博客">
 <meta property="og:description" content="最近几天在学习 CSS 基础知识，一直被 line-height, inline-block, vertical-align折磨，搜了一下这方面资料，不搜不知道一搜吓一跳，实际上这块还是值得好好研究一下的，据说line-height 和 vertical-align 这两个属性算得上是 CSS 里最难的两个属性了。这篇文章算做一个记录吧。">
+<meta property="og:image" content="http://oummu6kih.bkt.clouddn.com/inline_pic1.png">
 <meta property="og:image" content="http://oummu6kih.bkt.clouddn.com/inline_pic2.png">
-<meta property="og:updated_time" content="2017-08-19T15:48:23.844Z">
+<meta property="og:updated_time" content="2017-08-19T15:53:40.754Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解css 行高">
 <meta name="twitter:description" content="最近几天在学习 CSS 基础知识，一直被 line-height, inline-block, vertical-align折磨，搜了一下这方面资料，不搜不知道一搜吓一跳，实际上这块还是值得好好研究一下的，据说line-height 和 vertical-align 这两个属性算得上是 CSS 里最难的两个属性了。这篇文章算做一个记录吧。">
-<meta name="twitter:image" content="http://oummu6kih.bkt.clouddn.com/inline_pic2.png">
+<meta name="twitter:image" content="http://oummu6kih.bkt.clouddn.com/inline_pic1.png">
 
 
 
@@ -422,7 +423,7 @@
 <p>line-height 属性设置行间的距离（行高）。不允许使用负值。<br>该属性会影响行框的布局。在应用到一个块级元素时，它定义了该元素中基线之间的最小距离而不是最大距离。<br>line-height 与 font-size 的计算值之差（在 CSS 中成为“行间距”）分为两半，分别加到一个文本内容的顶部和底部。可以包含这些内容的最小框就是行框。</p>
 </blockquote>
 <p>刚看到这段话时我是费解的，这里面有太多知识点了，涉及到 行高，行框，基线，font-size，行间距等概念，有必要细说从头，先总结一下几个基本概念</p>
-<h2 id="几个名词"><a href="#几个名词" class="headerlink" title="几个名词"></a>几个名词</h2><h3 id="x-height"><a href="#x-height" class="headerlink" title="x-height"></a>x-height</h3><p>在西文字体排印学中, x-height 就是指小写字母 ‘x’ 的高度；维基上有格示意图：<br>图<br>按 <a href="http://www.zhangxinxu.com/wordpress/2015/06/about-letter-x-of-css/" target="_blank" rel="external">字母’x’在CSS世界中的角色和故事</a> 这篇文章作者的理解：</p>
+<h2 id="几个名词"><a href="#几个名词" class="headerlink" title="几个名词"></a>几个名词</h2><h3 id="x-height"><a href="#x-height" class="headerlink" title="x-height"></a>x-height</h3><p>在西文字体排印学中, x-height 就是指小写字母 ‘x’ 的高度；维基上有格示意图：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic1.png"><br>按 <a href="http://www.zhangxinxu.com/wordpress/2015/06/about-letter-x-of-css/" target="_blank" rel="external">字母’x’在CSS世界中的角色和故事</a> 这篇文章作者的理解：</p>
 <ul>
 <li>ascender height: 上行线高度</li>
 <li>cap height: 大写字母高度</li>
