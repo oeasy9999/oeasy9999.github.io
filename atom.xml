@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://oeasy.coding.me/"/>
-  <updated>2017-08-20T03:51:23.401Z</updated>
+  <updated>2017-08-20T04:58:13.559Z</updated>
   <id>http://oeasy.coding.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://oeasy.coding.me/2017/08/18/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3css%E8%A1%8C%E9%AB%98/"/>
     <id>http://oeasy.coding.me/2017/08/18/深入理解css行高/</id>
     <published>2017-08-18T14:06:30.000Z</published>
-    <updated>2017-08-20T03:51:23.401Z</updated>
+    <updated>2017-08-20T04:58:13.559Z</updated>
     
     <content type="html"><![CDATA[<p>最近几天在学习 CSS 基础知识，一直被 line-height, inline-block, vertical-align折磨，搜了一下这方面资料，不搜不知道一搜吓一跳，实际上这块还是值得好好研究一下的，据说line-height 和 vertical-align 这两个属性算得上是 CSS 里最难的两个属性了。这篇文章算做一个记录吧。<br><a id="more"></a><br>既然是 CSS 中比较难的属性，总要有个切入点吧，思来想去觉得还是从 W3C 中关于 line-height 的定义说起吧：</p>
 <blockquote>
@@ -54,6 +54,18 @@
 <h2 id="2-font-size"><a href="#2-font-size" class="headerlink" title="2. font-size"></a>2. font-size</h2><p>同样大小的字号，不同的字体显示出来的大小却是不一样的：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic3.png"><br>原因就在于字体的原理，这里就不细说了，有兴趣的同学可直接查看上面的原文或者译文，总结起来就是，当我们设置 font-size:100px 时，这个字体里的文字高度是 164px(以Catamaran字体为例)。这个计算出来的高度决定了 HTML 元素的 content-area（内容区域），后面我会讲到 content-area。你可以认为 content-area 就是 background 作用的区域。</p>
 <p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic4.png"></p>
 <p>我们还能看出大写字母的高度是 68px，小写字母的高度（x-height）是 49px。所以 1ex = 49px，1em = 100px，而不是 164px。（值得庆幸的是，em 是基于 font-size，而不是基于计算出来的高度）</p>
+<p>在继续深入之前，再次延伸点相关知识，这里就又提到另外一篇译文 <a href="http://www.cnblogs.com/fengzheng126/archive/2012/05/18/2507632.html" target="_blank" rel="external">深入了解css的行高Line Height属性</a> (原文是ppt，网上也有pdf版资源的下载)。<br><strong>注意：</strong> 在这篇ppt中，line-height 被理解为行间距，用来控制行与行之间的垂直距离，</p>
+<h2 id="3-CSS-boxes-的各种类型"><a href="#3-CSS-boxes-的各种类型" class="headerlink" title="3. CSS boxes 的各种类型"></a>3. CSS boxes 的各种类型</h2><p>先从一段代码开始<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;</div><div class="line">	The &lt;em&gt;emphasis&lt;/em&gt; element is defined as &quot;inline&quot;.</div><div class="line">&lt;/p&gt;</div></pre></td></tr></table></figure></p>
+<p>这个例子中涉及到4种 boxes:</p>
+<h3 id="containing-boxes"><a href="#containing-boxes" class="headerlink" title="containing boxes"></a>containing boxes</h3><p>段落就是一种 containing box,它包含了其他的boxes</p>
+<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic5.png"></p>
+<h3 id="inline-boxes"><a href="#inline-boxes" class="headerlink" title="inline boxes"></a>inline boxes</h3><p>在段落内，有一系列的 inline boxes,inline boxes 不会让内容显示成块而是排成一行。</p>
+<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic6.png"></p>
+<p>如果外部含inline属性的标签(span,a,cite等)，则属于inline boxes，如上图中的 emphasis元素就是一种 inline box;<br>如果没有特别标签的 box，则属于匿名inline boxes,如上图中另外两个为匿名 inline boxes;</p>
+<h3 id="line-boxes"><a href="#line-boxes" class="headerlink" title="line boxes"></a>line boxes</h3><p>在containing boxes里，一个一个的inline boxes组成了line boxes。</p>
+<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic9.png"></p>
+<h3 id="content-area"><a href="#content-area" class="headerlink" title="content area"></a>content area</h3><p>content area 是一种围绕文字看不见的box。content area的大小与font-size大小相关。</p>
+<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic10.png"></p>
 <h2 id="3-参考资料"><a href="#3-参考资料" class="headerlink" title="3. 参考资料"></a>3. 参考资料</h2><ul>
 <li><a href="http://www.w3cplus.com/css/css-font-metrics-line-height-and-vertical-align.html" target="_blank" rel="external">深入了解CSS字体度量，行高和vertical-align</a></li>
 <li><a href="http://www.cnblogs.com/fengzheng126/archive/2012/05/18/2507632.html" target="_blank" rel="external">深入了解css的行高Line Height属性</a></li>
