@@ -26,11 +26,12 @@
 <li>底线(bottom line): 红线</li>
 </ul>
 <p>vertical-align 属性中 top, middle, baseline, bottom 就是和这四条线相关。</p>
-<h3 id="内容区"><a href="#内容区" class="headerlink" title="内容区"></a>内容区</h3><p>内容区： 底线和顶线包裹的区域(行内元素可以通过 background-color属性显示出来)，内容区的大小依据 font-size 的值和字数进行变化。</p>
+<h3 id="内容区"><a href="#内容区" class="headerlink" title="内容区"></a>内容区</h3><p>内容区(content-area)： 底线和顶线包裹的区域(行内元素可以通过 background-color属性显示出来)，内容区的大小依据 font-size 的值和字数进行变化。</p>
+<p><strong>这里要说明一下，这个所谓的内容区，通过查找一些资料结合我的理解，其实就是后面要提到的四个CSS boxes 中的一个： content-area</strong></p>
 <h3 id="行高，行距与半行距"><a href="#行高，行距与半行距" class="headerlink" title="行高，行距与半行距"></a>行高，行距与半行距</h3><p>行高(line-height):包括内容区与以内容区为基础对称拓展的空白区域，一般情况下，也可以认为是上下文本行的基线间的垂直距离，即图中两条绿线间垂直距离。</p>
-<p>行距：是指一行底线到下一行顶线的垂直距离，即第一行红线和第二行蓝线间的垂直距离。<br>我认为一篇已经被转载烂的博文  深入理解 CSS 中的行高与基线 (原文我已经找不到了） 上的说法更准确一些： (上文本行行高 - 内容区高度)/2 + (下文本行行高 - 内容区高度)/2。</p>
+<p>行距(leading)：是指一行底线到下一行顶线的垂直距离，即第一行红线和第二行蓝线间的垂直距离。<br>我认为一篇已经被转载烂的博文  深入理解 CSS 中的行高与基线 (原文我已经找不到了） 上的说法更准确一些： (上文本行行高 - 内容区高度)/2 + (下文本行行高 - 内容区高度)/2。</p>
 <p>半行距是行距的一半，即区域3垂直距离/2，区域1，2，3，4的距离之和为行高，而区域1，2，4距离之和为字体size，所以半行距也可以这么算：（行高-字体size）/2</p>
-<h3 id="行内框和行框"><a href="#行内框和行框" class="headerlink" title="行内框和行框"></a>行内框和行框</h3><p>行内框，每个行内元素会生成一个行内框，行内框是一个浏览器渲染模型中的一个概念，无法显示出来，在没有其他因素影响的时候（padding等），行内框等于内容区域，而设定行高时行内框高度不变，半行距【（行高-字体size）/2】分别增加/减少到内容区域的上下两边（深蓝色区域）</p>
+<h3 id="行内框和行框"><a href="#行内框和行框" class="headerlink" title="行内框和行框"></a>行内框和行框</h3><p>行内框（inline box），每个行内元素会生成一个行内框，行内框是一个浏览器渲染模型中的一个概念，无法显示出来，在没有其他因素影响的时候（padding等），行内框等于内容区域，而设定行高时行内框高度不变，半行距【（行高-字体size）/2】分别增加/减少到内容区域的上下两边（深蓝色区域）</p>
 <p>行框（line box），行框是指本行的一个虚拟的矩形框，也是浏览器渲染模式中的一个概念，并没有实际显示。行框高度等于本行内所有元素中行内框最大的值（以行高值最大的行内框为基准，其他行内框采用自己的对齐方式向基准对齐，最终计算行框的高度），当有多行内容时，每行都会有自己的行框。</p>
 <p>这几个基本概念理解之后，再来看 line-height 的定义就清晰多了，line-height 即是行高。</p>
 <p>到这里，有必要提一下 <a href="http://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align" target="_blank" rel="external">Deep dive CSS: font metrics, line-height and vertical-align - Vincent De Oliveira</a> 这篇文章了，国内也有译文，我认为知乎上这篇 <a href="https://zhuanlan.zhihu.com/p/25808995" target="_blank" rel="external">深入理解 CSS：字体度量、line-height 和 vertical-align</a> 翻译的更得我心，这里借鉴一下</p>
