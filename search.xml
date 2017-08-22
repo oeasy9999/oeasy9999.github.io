@@ -197,12 +197,7 @@
 </tr>
 </tbody>
 </table>
-<p>///////////////////////////////////////////////////////////////////////////////</p>
-<p>到这里，有必要提一下 <a href="http://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align" target="_blank" rel="external">Deep dive CSS: font metrics, line-height and vertical-align - Vincent De Oliveira</a> 这篇文章了，国内也有译文，我认为知乎上这篇 <a href="https://zhuanlan.zhihu.com/p/25808995" target="_blank" rel="external">深入理解 CSS：字体度量、line-height 和 vertical-align</a> 翻译的更得我心，这里借鉴一下</p>
-<h2 id="2-font-size"><a href="#2-font-size" class="headerlink" title="2. font-size"></a>2. font-size</h2><p>同样大小的字号，不同的字体显示出来的大小却是不一样的：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic3.png"><br>原因就在于字体的原理，这里就不细说了，有兴趣的同学可直接查看上面的原文或者译文，总结起来就是，当我们设置 font-size:100px 时，这个字体里的文字高度是 164px(以Catamaran字体为例)。这个计算出来的高度决定了 HTML 元素的 content-area（内容区域），后面我会讲到 content-area。你可以认为 content-area 就是 background 作用的区域。</p>
-<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic4.png"></p>
-<p>我们还能看出大写字母的高度是 68px，小写字母的高度（x-height）是 49px。所以 1ex = 49px，1em = 100px，而不是 164px。（值得庆幸的是，em 是基于 font-size，而不是基于计算出来的高度）</p>
-<h2 id="3-CSS-boxes-的各种类型"><a href="#3-CSS-boxes-的各种类型" class="headerlink" title="3. CSS boxes 的各种类型"></a>3. CSS boxes 的各种类型</h2><p>先从一段代码开始<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;</div><div class="line">	The &lt;em&gt;emphasis&lt;/em&gt; element is defined as &quot;inline&quot;.</div><div class="line">&lt;/p&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="CSS-boxes-类型"><a href="#CSS-boxes-类型" class="headerlink" title="CSS boxes 类型"></a>CSS boxes 类型</h3><p>先从一段代码开始<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;</div><div class="line">	Lorem ipsum &lt;i&gt;dolor sit amet&lt;/i&gt;, consectetuer adipiscing elit. Voluptate incidunt in quo autem veritatis ea a similique dolores, perspiciatis, deserunt saepe corporis magni unde.</div><div class="line">&lt;/p&gt;</div></pre></td></tr></table></figure></p>
 <p>这个例子中涉及到4种 boxes:</p>
 <h3 id="containing-boxes"><a href="#containing-boxes" class="headerlink" title="containing boxes"></a>containing boxes</h3><p>段落就是一种 containing box,它包含了其他的boxes<br><strong> 也可以叫做 block box, 貌似这个更贴切 </strong></p>
 <p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic5.png"></p>
@@ -215,6 +210,15 @@
 <p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic10.png"></p>
 <p>以上是 CSS 中四种 boxes，其中 line-box 的高度是由它所有子元素的高度计算得出的。浏览器会计算这一行里每个子元素的高度，再得出 line-box 的高度（具体来说就是从子元素的最高点到最低点的高度），所以默认情况下，一个 line-box 总是有足够的高度来容纳它的子元素。</p>
 <p>** 四者关系：containing box &gt; line box &gt; inline box = line-height = top half-leading + content area + buttom half-leading</p>
+<h3 id="line-height-与-inline-boxes"><a href="#line-height-与-inline-boxes" class="headerlink" title="line-height 与 inline boxes"></a>line-height 与 inline boxes</h3><p>line-height 分三步作用于 inline boxes 上：<br>step1. 计算出 line-height 和 font-size 的差值得到 leading,即是行间距. line-height - font-size = leading.<br>step2. 计算出半行间距. leading / 2 = half-leading.<br>step3. 半行间距分别添加到 content area 的顶部和底部.即得到 inline box.</p>
+<p>一个例子：line-height 为 20px，font-size 为16px,<br>leading 为 20px - 16px = 4px<br>half-leading 为 4px / 2 = 2px</p>
+<p>Top half-leading: 2px<br>Content area: 160x<br>Bottom half-leading: 2px<br>Total height: 20px</p>
+<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic20.png"></p>
+<p>///////////////////////////////////////////////////////////////////////////////</p>
+<p>到这里，有必要提一下 <a href="http://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align" target="_blank" rel="external">Deep dive CSS: font metrics, line-height and vertical-align - Vincent De Oliveira</a> 这篇文章了，国内也有译文，我认为知乎上这篇 <a href="https://zhuanlan.zhihu.com/p/25808995" target="_blank" rel="external">深入理解 CSS：字体度量、line-height 和 vertical-align</a> 翻译的更得我心，这里借鉴一下</p>
+<h2 id="2-font-size"><a href="#2-font-size" class="headerlink" title="2. font-size"></a>2. font-size</h2><p>同样大小的字号，不同的字体显示出来的大小却是不一样的：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic3.png"><br>原因就在于字体的原理，这里就不细说了，有兴趣的同学可直接查看上面的原文或者译文，总结起来就是，当我们设置 font-size:100px 时，这个字体里的文字高度是 164px(以Catamaran字体为例)。这个计算出来的高度决定了 HTML 元素的 content-area（内容区域），后面我会讲到 content-area。你可以认为 content-area 就是 background 作用的区域。</p>
+<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic4.png"></p>
+<p>我们还能看出大写字母的高度是 68px，小写字母的高度（x-height）是 49px。所以 1ex = 49px，1em = 100px，而不是 164px。（值得庆幸的是，em 是基于 font-size，而不是基于计算出来的高度）</p>
 <h2 id="4-line-height"><a href="#4-line-height" class="headerlink" title="4.line-height"></a>4.line-height</h2><p>按照 <a href="https://zhuanlan.zhihu.com/p/25808995" target="_blank" rel="external">深入理解 CSS：字体度量、line-height 和 vertical-align</a> 译文说法：</p>
 <blockquote>
 <p>一个内联元素有两个高度：content-area 高度和 virtual-area （实际区域？）高度。<br>content-area 的高度是由字体度量定义的;<br>vitual-area 的高度就是 line-height，这个高度用于计算 line-box 的高度;</p>
