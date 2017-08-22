@@ -47,7 +47,26 @@
 <h3 id="line-height-继承"><a href="#line-height-继承" class="headerlink" title="line-height 继承"></a>line-height 继承</h3><p>line-height 的继承比较复杂，需要分不同方式计算得到：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;h1&gt;</div><div class="line">	consect etuer adipi scing elitsed diam nonummy</div><div class="line">&lt;/h1&gt;</div><div class="line">&lt;p&gt;</div><div class="line">	Lorem ipsum dolor sit amet consect etuer adipi scing elit seddiam nonummy nibh enismod tinunt ut laoreet dolore magna aliquam erat volut. Ut wisi enim ad minim veniam</div><div class="line">&lt;/p&gt;</div><div class="line">&lt;div id=&quot;footer&quot;&gt;</div><div class="line">	Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros.</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
 <h4 id="百分比"><a href="#百分比" class="headerlink" title="百分比"></a>百分比</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">body&#123;</div><div class="line">	font-size: 16px;</div><div class="line">	line-height: 100%;</div><div class="line">&#125;</div><div class="line">h1 &#123; font-size: 32px; &#125;</div><div class="line">p &#123; font-size: 16px; &#125;</div><div class="line">#footer &#123; font-size: 12px; &#125;</div></pre></td></tr></table></figure>
 <p>当 line-height 为百分比时，所有继承下来的元素会忽略本身的 font-size，而使用相同的计算来的 line-height<br>|element | font-size | line-height | calculated line-height |<br>| — | — | — | — |<br>| body | 16px | 120px | 16px * 120% = 19.2px |<br>| h1 | 32px | inherits calculated value - 19.2px | 19.2px |<br>| p | 16px | inherits calculated value - 19.2px | 19.2px |<br>| #footer | 12px | inherits calculated value - 19.2px | 19.2px |</p>
-<p>///////////////////////////////////////////////////////////////////////////////<br>到这里，有必要提一下 <a href="http://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align" target="_blank" rel="external">Deep dive CSS: font metrics, line-height and vertical-align - Vincent De Oliveira</a> 这篇文章了，国内也有译文，我认为知乎上这篇 <a href="https://zhuanlan.zhihu.com/p/25808995" target="_blank" rel="external">深入理解 CSS：字体度量、line-height 和 vertical-align</a> 翻译的更得我心，这里借鉴一下</p>
+<p>///////////////////////////////////////////////////////////////////////////////</p>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th style="text-align:right">Title 1</th>
+<th style="text-align:center">Title 2</th>
+<th style="text-align:right">Title 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td style="text-align:right">B</td>
+<td style="text-align:center">C</td>
+<td style="text-align:right">D</td>
+</tr>
+</tbody>
+</table>
+<p>到这里，有必要提一下 <a href="http://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align" target="_blank" rel="external">Deep dive CSS: font metrics, line-height and vertical-align - Vincent De Oliveira</a> 这篇文章了，国内也有译文，我认为知乎上这篇 <a href="https://zhuanlan.zhihu.com/p/25808995" target="_blank" rel="external">深入理解 CSS：字体度量、line-height 和 vertical-align</a> 翻译的更得我心，这里借鉴一下</p>
 <h2 id="2-font-size"><a href="#2-font-size" class="headerlink" title="2. font-size"></a>2. font-size</h2><p>同样大小的字号，不同的字体显示出来的大小却是不一样的：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic3.png"><br>原因就在于字体的原理，这里就不细说了，有兴趣的同学可直接查看上面的原文或者译文，总结起来就是，当我们设置 font-size:100px 时，这个字体里的文字高度是 164px(以Catamaran字体为例)。这个计算出来的高度决定了 HTML 元素的 content-area（内容区域），后面我会讲到 content-area。你可以认为 content-area 就是 background 作用的区域。</p>
 <p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic4.png"></p>
 <p>我们还能看出大写字母的高度是 68px，小写字母的高度（x-height）是 49px。所以 1ex = 49px，1em = 100px，而不是 164px。（值得庆幸的是，em 是基于 font-size，而不是基于计算出来的高度）</p>
