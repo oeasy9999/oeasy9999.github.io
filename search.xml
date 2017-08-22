@@ -51,18 +51,18 @@
 <table>
 <thead>
 <tr>
-<th>element</th>
-<th style="text-align:right">font-size</th>
+<th style="text-align:center">element</th>
+<th style="text-align:center">font-size</th>
 <th style="text-align:center">line-height</th>
-<th style="text-align:right">calculated line-height</th>
+<th style="text-align:center">calculated line-height</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>A</td>
-<td style="text-align:right">B</td>
-<td style="text-align:center">C</td>
-<td style="text-align:right">D</td>
+<td style="text-align:center">body</td>
+<td style="text-align:center">16px</td>
+<td style="text-align:center">120px</td>
+<td style="text-align:center">16px * 120% = 19.2px</td>
 </tr>
 </tbody>
 </table>
