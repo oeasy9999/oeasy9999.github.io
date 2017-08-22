@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://oeasy.coding.me/"/>
-  <updated>2017-08-22T15:23:38.242Z</updated>
+  <updated>2017-08-22T15:45:21.166Z</updated>
   <id>http://oeasy.coding.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://oeasy.coding.me/2017/08/18/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3css%E8%A1%8C%E9%AB%98/"/>
     <id>http://oeasy.coding.me/2017/08/18/深入理解css行高/</id>
     <published>2017-08-18T14:06:30.000Z</published>
-    <updated>2017-08-22T15:23:38.242Z</updated>
+    <updated>2017-08-22T15:45:21.166Z</updated>
     
     <content type="html"><![CDATA[<p>最近几天在学习 CSS 基础知识，一直被 line-height, inline-block, vertical-align折磨，搜了一下这方面资料，不搜不知道一搜吓一跳，实际上这块还是值得好好研究一下的，据说line-height 和 vertical-align 这两个属性算得上是 CSS 里最难的两个属性了。这篇文章算做一个记录吧。<br><a id="more"></a><br>既然是 CSS 中比较难的属性，总要有个切入点吧，思来想去觉得还是从 W3C 中关于 line-height 的定义说起吧：</p>
 <blockquote>
@@ -70,73 +70,151 @@
 <th style="text-align:center">element</th>
 <th style="text-align:center">font-size</th>
 <th style="text-align:center">line-height</th>
-<th style="text-align:center">calculated line-height</th>
+<th style="text-align:center">计算后的 line-height</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:center">body</td>
 <td style="text-align:center">16px</td>
-<td style="text-align:center">120px</td>
+<td style="text-align:center">120%</td>
 <td style="text-align:center">16px * 120% = 19.2px</td>
 </tr>
 <tr>
 <td style="text-align:center">h1</td>
 <td style="text-align:center">32px</td>
-<td style="text-align:center">inherits calculated value - 19.2px</td>
+<td style="text-align:center">继承计算后的值 - 19.2px</td>
 <td style="text-align:center">19.2px</td>
 </tr>
 <tr>
 <td style="text-align:center">p</td>
 <td style="text-align:center">16px</td>
-<td style="text-align:center">inherits calculated value - 19.2px</td>
+<td style="text-align:center">继承计算后的值 - 19.2px</td>
 <td style="text-align:center">19.2px</td>
 </tr>
 <tr>
 <td style="text-align:center">#footer</td>
 <td style="text-align:center">12px</td>
-<td style="text-align:center">inherits calculated value - 19.2px</td>
+<td style="text-align:center">继承计算后的值 - 19.2px</td>
 <td style="text-align:center">19.2px</td>
 </tr>
 </tbody>
 </table>
-<p>///////////////////////////////////////////////////////////////////////////////</p>
+<h4 id="长度"><a href="#长度" class="headerlink" title="长度"></a>长度</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">body&#123;</div><div class="line">	font-size: 16px;</div><div class="line">	line-height: 20px;</div><div class="line">&#125;</div><div class="line">h1 &#123; font-size: 32px; &#125;</div><div class="line">p &#123; font-size: 16px; &#125;</div><div class="line">#footer &#123; font-size: 12px; &#125;</div></pre></td></tr></table></figure>
+<p>当 line-height 为长度值时，所有继承下来的元素会忽略本身的 font-size，而使用相同的继承来的 line-height</p>
 <table>
 <thead>
 <tr>
 <th style="text-align:center">element</th>
 <th style="text-align:center">font-size</th>
 <th style="text-align:center">line-height</th>
-<th style="text-align:center">calculated line-height</th>
+<th style="text-align:center">计算后的 line-height</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:center">body</td>
 <td style="text-align:center">16px</td>
-<td style="text-align:center">120px</td>
-<td style="text-align:center">16px * 120% = 19.2px</td>
+<td style="text-align:center">20px</td>
+<td style="text-align:center">20px</td>
 </tr>
 <tr>
 <td style="text-align:center">h1</td>
 <td style="text-align:center">32px</td>
-<td style="text-align:center">inherits calculated value - 19.2px</td>
-<td style="text-align:center">19.2px</td>
+<td style="text-align:center">继承的值 - 20px</td>
+<td style="text-align:center">20px</td>
 </tr>
 <tr>
 <td style="text-align:center">p</td>
 <td style="text-align:center">16px</td>
-<td style="text-align:center">inherits calculated value - 19.2px</td>
-<td style="text-align:center">19.2px</td>
+<td style="text-align:center">继承的值 - 20px</td>
+<td style="text-align:center">20px</td>
 </tr>
 <tr>
 <td style="text-align:center">#footer</td>
 <td style="text-align:center">12px</td>
-<td style="text-align:center">inherits calculated value - 19.2px</td>
-<td style="text-align:center">19.2px</td>
+<td style="text-align:center">继承的值 - 20px</td>
+<td style="text-align:center">20px</td>
 </tr>
 </tbody>
 </table>
+<h4 id="normal"><a href="#normal" class="headerlink" title="normal"></a>normal</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">body&#123;</div><div class="line">	font-size: 16px;</div><div class="line">	line-height: normal;</div><div class="line">&#125;</div><div class="line">h1 &#123; font-size: 32px; &#125;</div><div class="line">p &#123; font-size: 16px; &#125;</div><div class="line">#footer &#123; font-size: 12px; &#125;</div></pre></td></tr></table></figure>
+<p>当 line-height 为 normal 时，所有继承下来的元素不会忽略本身的 font-size，而使用基于 font-size 计算出来的 line-height,而normal 的值根据浏览器的不同会有细微的差别</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">element</th>
+<th style="text-align:center">font-size</th>
+<th style="text-align:center">line-height</th>
+<th style="text-align:center">计算后的 line-height</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">body</td>
+<td style="text-align:center">16px</td>
+<td style="text-align:center">normal</td>
+<td style="text-align:center">16px * 约1.2 = 约19.2px</td>
+</tr>
+<tr>
+<td style="text-align:center">h1</td>
+<td style="text-align:center">32px</td>
+<td style="text-align:center">normal</td>
+<td style="text-align:center">32px * 约1.2 = 约38.4px</td>
+</tr>
+<tr>
+<td style="text-align:center">p</td>
+<td style="text-align:center">16px</td>
+<td style="text-align:center">normal</td>
+<td style="text-align:center">16px * 约1.2 = 约19.2px</td>
+</tr>
+<tr>
+<td style="text-align:center">#footer</td>
+<td style="text-align:center">12px</td>
+<td style="text-align:center">normal</td>
+<td style="text-align:center">12px * 约1.2 = 约13.44px</td>
+</tr>
+</tbody>
+</table>
+<h4 id="纯数字"><a href="#纯数字" class="headerlink" title="纯数字"></a>纯数字</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">body&#123;</div><div class="line">	font-size: 16px;</div><div class="line">	line-height: 1.5;</div><div class="line">&#125;</div><div class="line">h1 &#123; font-size: 32px; &#125;</div><div class="line">p &#123; font-size: 16px; &#125;</div><div class="line">#footer &#123; font-size: 12px; &#125;</div></pre></td></tr></table></figure>
+<p>当 line-height 为纯数字时，所有继承下来的元素不会忽略本身的 font-size，而使用基于 font-size 计算出来的 line-height</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">element</th>
+<th style="text-align:center">font-size</th>
+<th style="text-align:center">line-height</th>
+<th style="text-align:center">计算后的 line-height</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">body</td>
+<td style="text-align:center">16px</td>
+<td style="text-align:center">1.5</td>
+<td style="text-align:center">16px * 1.5 = 24px</td>
+</tr>
+<tr>
+<td style="text-align:center">h1</td>
+<td style="text-align:center">32px</td>
+<td style="text-align:center">系数1.5</td>
+<td style="text-align:center">32px * 1.5 = 48px</td>
+</tr>
+<tr>
+<td style="text-align:center">p</td>
+<td style="text-align:center">16px</td>
+<td style="text-align:center">系数1.5</td>
+<td style="text-align:center">16px * 1.5 = 24px</td>
+</tr>
+<tr>
+<td style="text-align:center">#footer</td>
+<td style="text-align:center">12px</td>
+<td style="text-align:center">系数1.5</td>
+<td style="text-align:center">12px * 1.5 = 18px</td>
+</tr>
+</tbody>
+</table>
+<p>///////////////////////////////////////////////////////////////////////////////</p>
 <p>到这里，有必要提一下 <a href="http://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align" target="_blank" rel="external">Deep dive CSS: font metrics, line-height and vertical-align - Vincent De Oliveira</a> 这篇文章了，国内也有译文，我认为知乎上这篇 <a href="https://zhuanlan.zhihu.com/p/25808995" target="_blank" rel="external">深入理解 CSS：字体度量、line-height 和 vertical-align</a> 翻译的更得我心，这里借鉴一下</p>
 <h2 id="2-font-size"><a href="#2-font-size" class="headerlink" title="2. font-size"></a>2. font-size</h2><p>同样大小的字号，不同的字体显示出来的大小却是不一样的：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic3.png"><br>原因就在于字体的原理，这里就不细说了，有兴趣的同学可直接查看上面的原文或者译文，总结起来就是，当我们设置 font-size:100px 时，这个字体里的文字高度是 164px(以Catamaran字体为例)。这个计算出来的高度决定了 HTML 元素的 content-area（内容区域），后面我会讲到 content-area。你可以认为 content-area 就是 background 作用的区域。</p>
 <p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic4.png"></p>
