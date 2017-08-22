@@ -51,10 +51,10 @@
 <table>
 <thead>
 <tr>
-<th>Title</th>
-<th style="text-align:right">Title 1</th>
-<th style="text-align:center">Title 2</th>
-<th style="text-align:right">Title 3</th>
+<th>element</th>
+<th style="text-align:right">font-size</th>
+<th style="text-align:center">line-height</th>
+<th style="text-align:right">calculated line-height</th>
 </tr>
 </thead>
 <tbody>
