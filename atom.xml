@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://oeasy.coding.me/"/>
-  <updated>2017-08-21T15:45:41.742Z</updated>
+  <updated>2017-08-22T15:03:56.182Z</updated>
   <id>http://oeasy.coding.me/</id>
   
   <author>
@@ -20,14 +20,14 @@
     <link href="http://oeasy.coding.me/2017/08/18/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3css%E8%A1%8C%E9%AB%98/"/>
     <id>http://oeasy.coding.me/2017/08/18/深入理解css行高/</id>
     <published>2017-08-18T14:06:30.000Z</published>
-    <updated>2017-08-21T15:45:41.742Z</updated>
+    <updated>2017-08-22T15:03:56.182Z</updated>
     
     <content type="html"><![CDATA[<p>最近几天在学习 CSS 基础知识，一直被 line-height, inline-block, vertical-align折磨，搜了一下这方面资料，不搜不知道一搜吓一跳，实际上这块还是值得好好研究一下的，据说line-height 和 vertical-align 这两个属性算得上是 CSS 里最难的两个属性了。这篇文章算做一个记录吧。<br><a id="more"></a><br>既然是 CSS 中比较难的属性，总要有个切入点吧，思来想去觉得还是从 W3C 中关于 line-height 的定义说起吧：</p>
 <blockquote>
 <p>line-height 属性设置行间的距离（行高）。不允许使用负值。<br>该属性会影响行框的布局。在应用到一个块级元素时，它定义了该元素中基线之间的最小距离而不是最大距离。<br>line-height 与 font-size 的计算值之差（在 CSS 中成为“行间距”）分为两半，分别加到一个文本内容的顶部和底部。可以包含这些内容的最小框就是行框。</p>
 </blockquote>
 <p>刚看到这段话时我是费解的，这里面有太多知识点了，涉及到 行高，行框，基线，font-size，行间距等概念，有必要细说从头，先总结一下几个基本概念</p>
-<h2 id="1-几个名词"><a href="#1-几个名词" class="headerlink" title="1. 几个名词"></a>1. 几个名词</h2><h3 id="x-height"><a href="#x-height" class="headerlink" title="x-height"></a>x-height</h3><p>在西文字体排印学中, x-height 就是指小写字母 ‘x’ 的高度；维基上有格示意图：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic1.png"><br>按 <a href="http://www.zhangxinxu.com/wordpress/2015/06/about-letter-x-of-css/" target="_blank" rel="external">字母’x’在CSS世界中的角色和故事</a> 这篇文章作者的理解：</p>
+<h2 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1. 基本概念"></a>1. 基本概念</h2><h3 id="x-height"><a href="#x-height" class="headerlink" title="x-height"></a>x-height</h3><p>在西文字体排印学中, x-height 就是指小写字母 ‘x’ 的高度；维基上有格示意图：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic1.png"><br>按 <a href="http://www.zhangxinxu.com/wordpress/2015/06/about-letter-x-of-css/" target="_blank" rel="external">字母’x’在CSS世界中的角色和故事</a> 这篇文章作者的理解：</p>
 <ul>
 <li>ascender height: 上行线高度</li>
 <li>cap height: 大写字母高度</li>
@@ -51,12 +51,24 @@
 <h3 id="行内框和行框"><a href="#行内框和行框" class="headerlink" title="行内框和行框"></a>行内框和行框</h3><p>行内框（inline box），每个行内元素会生成一个行内框，行内框是一个浏览器渲染模型中的一个概念，无法显示出来，在没有其他因素影响的时候（padding等），行内框等于内容区域，而设定行高时行内框高度不变，半行距【（行高-字体size）/2】分别增加/减少到内容区域的上下两边（深蓝色区域）</p>
 <p>行框（line box），行框是指本行的一个虚拟的矩形框，也是浏览器渲染模式中的一个概念，并没有实际显示。行框高度等于本行内所有元素中行内框最大的值（以行高值最大的行内框为基准，其他行内框采用自己的对齐方式向基准对齐，最终计算行框的高度），当有多行内容时，每行都会有自己的行框。</p>
 <p>这几个基本概念理解之后，再来看 line-height 的定义就清晰多了，line-height 即是行高。</p>
-<p>到这里，有必要提一下 <a href="http://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align" target="_blank" rel="external">Deep dive CSS: font metrics, line-height and vertical-align - Vincent De Oliveira</a> 这篇文章了，国内也有译文，我认为知乎上这篇 <a href="https://zhuanlan.zhihu.com/p/25808995" target="_blank" rel="external">深入理解 CSS：字体度量、line-height 和 vertical-align</a> 翻译的更得我心，这里借鉴一下</p>
+<h2 id="2-line-height"><a href="#2-line-height" class="headerlink" title="2. line-height"></a>2. line-height</h2><p>这里借鉴两篇PPT博文：<strong> line-height </strong> 和 <strong> deep-dive-line-height </strong>，网上有提供pdf版资源的下载，其中第一篇有中文版翻译：<a href="http://www.cnblogs.com/fengzheng126/archive/2012/05/18/2507632.html" target="_blank" rel="external">深入了解css的行高Line Height属性</a>。</p>
+<p><strong>注意：</strong> 在这篇ppt中，有一个概念叫行间距，line-height 被理解为用来控制行与行之间的垂直距离，行间距与半行间距，取决于CSS中的line-height。</p>
+<h3 id="line-height-语法"><a href="#line-height-语法" class="headerlink" title="line-height 语法"></a>line-height 语法</h3><p>5种方式定义line-height</p>
+<ol>
+<li>默认形式normal，不同浏览器值为1.0 - 1.2之间:  body { line-height: normal; }</li>
+<li>继承父类形式 inherit: body { line-height: inherit; }</li>
+<li>百分比形式%：body { line-height: 120%; }</li>
+<li>长度值形式：body { line-height: 20px; }</li>
+<li>纯数字形式：body { line-height: 1; }</li>
+</ol>
+<h3 id="line-height-继承"><a href="#line-height-继承" class="headerlink" title="line-height 继承"></a>line-height 继承</h3><p>line-height 的继承比较复杂，需要分不同方式计算得到：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;h1&gt;</div><div class="line">	consect etuer adipi scing elitsed diam nonummy</div><div class="line">&lt;/h1&gt;</div><div class="line">&lt;p&gt;</div><div class="line">	Lorem ipsum dolor sit amet consect etuer adipi scing elit seddiam nonummy nibh enismod tinunt ut laoreet dolore magna aliquam erat volut. Ut wisi enim ad minim veniam</div><div class="line">&lt;/p&gt;</div><div class="line">&lt;div id=&quot;footer&quot;&gt;</div><div class="line">	Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros.</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="百分比"><a href="#百分比" class="headerlink" title="百分比"></a>百分比</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">body&#123;</div><div class="line">	font-size: 16px;</div><div class="line">	line-height: 100%;</div><div class="line">&#125;</div><div class="line">h1 &#123; font-size: 32px; &#125;</div><div class="line">p &#123; font-size: 16px; &#125;</div><div class="line">#footer &#123; font-size: 12px; &#125;</div></pre></td></tr></table></figure>
+<p>当 line-height 为百分比时，所有继承下来的元素会忽略本身的 font-size，而使用相同的计算来的 line-height<br>|element | font-size | line-height | calculated line-height |<br>| — | — | — | — |<br>| body | 16px | 120px | 16px * 120% = 19.2px |<br>| h1 | 32px | inherits calculated value - 19.2px | 19.2px |<br>| p | 16px | inherits calculated value - 19.2px | 19.2px |<br>| #footer | 12px | inherits calculated value - 19.2px | 19.2px |</p>
+<p>///////////////////////////////////////////////////////////////////////////////<br>到这里，有必要提一下 <a href="http://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align" target="_blank" rel="external">Deep dive CSS: font metrics, line-height and vertical-align - Vincent De Oliveira</a> 这篇文章了，国内也有译文，我认为知乎上这篇 <a href="https://zhuanlan.zhihu.com/p/25808995" target="_blank" rel="external">深入理解 CSS：字体度量、line-height 和 vertical-align</a> 翻译的更得我心，这里借鉴一下</p>
 <h2 id="2-font-size"><a href="#2-font-size" class="headerlink" title="2. font-size"></a>2. font-size</h2><p>同样大小的字号，不同的字体显示出来的大小却是不一样的：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic3.png"><br>原因就在于字体的原理，这里就不细说了，有兴趣的同学可直接查看上面的原文或者译文，总结起来就是，当我们设置 font-size:100px 时，这个字体里的文字高度是 164px(以Catamaran字体为例)。这个计算出来的高度决定了 HTML 元素的 content-area（内容区域），后面我会讲到 content-area。你可以认为 content-area 就是 background 作用的区域。</p>
 <p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic4.png"></p>
 <p>我们还能看出大写字母的高度是 68px，小写字母的高度（x-height）是 49px。所以 1ex = 49px，1em = 100px，而不是 164px。（值得庆幸的是，em 是基于 font-size，而不是基于计算出来的高度）</p>
-<h2 id="3-CSS-boxes-的各种类型"><a href="#3-CSS-boxes-的各种类型" class="headerlink" title="3. CSS boxes 的各种类型"></a>3. CSS boxes 的各种类型</h2><p>在继续深入之前，再次延伸点相关知识，这里就又提到另外一篇译文 <a href="http://www.cnblogs.com/fengzheng126/archive/2012/05/18/2507632.html" target="_blank" rel="external">深入了解css的行高Line Height属性</a> (原文是ppt，网上也有pdf版资源的下载)。<br><strong>注意：</strong> 在这篇ppt中，line-height 被理解为行间距，用来控制行与行之间的垂直距离，</p>
-<p>先从一段代码开始<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;</div><div class="line">	The &lt;em&gt;emphasis&lt;/em&gt; element is defined as &quot;inline&quot;.</div><div class="line">&lt;/p&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="3-CSS-boxes-的各种类型"><a href="#3-CSS-boxes-的各种类型" class="headerlink" title="3. CSS boxes 的各种类型"></a>3. CSS boxes 的各种类型</h2><p>先从一段代码开始<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;</div><div class="line">	The &lt;em&gt;emphasis&lt;/em&gt; element is defined as &quot;inline&quot;.</div><div class="line">&lt;/p&gt;</div></pre></td></tr></table></figure></p>
 <p>这个例子中涉及到4种 boxes:</p>
 <h3 id="containing-boxes"><a href="#containing-boxes" class="headerlink" title="containing boxes"></a>containing boxes</h3><p>段落就是一种 containing box,它包含了其他的boxes<br><strong> 也可以叫做 block box, 貌似这个更贴切 </strong></p>
 <p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic5.png"></p>
