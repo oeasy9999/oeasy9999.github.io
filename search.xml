@@ -207,7 +207,7 @@
 <h3 id="line-boxes-line-height"><a href="#line-boxes-line-height" class="headerlink" title="line boxes(line-height ?)"></a>line boxes(line-height ?)</h3><p>在containing boxes里，一个一个的inline boxes组成了line boxes。</p>
 <p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic9.png" style="margin-left: 10px"></p>
 <h3 id="content-area"><a href="#content-area" class="headerlink" title="content area"></a>content area</h3><p>content area 是一种围绕文字看不见的box。content area的大小与font-size大小相关。</p>
-<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic10.png" style="margin-left: 10px"></p>
+<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic10.png" style="margin-left: 10px; height: 100px; width: 200px;"></p>
 <p>以上是 CSS 中四种 boxes，其中 line-box 的高度是由它所有子元素的高度计算得出的。浏览器会计算这一行里每个子元素的高度，再得出 line-box 的高度（具体来说就是从子元素的最高点到最低点的高度），所以默认情况下，一个 line-box 总是有足够的高度来容纳它的子元素。</p>
 <p>** 四者关系：containing box &gt; line box &gt; inline box = line-height = top half-leading + content area + buttom half-leading</p>
 <h3 id="line-height-与-inline-boxes"><a href="#line-height-与-inline-boxes" class="headerlink" title="line-height 与 inline boxes"></a>line-height 与 inline boxes</h3><p>line-height 分三步作用于 inline boxes 上：<br>step1. 计算出 line-height 和 font-size 的差值得到 leading,即是行间距. line-height - font-size = leading.<br>step2. 计算出半行间距. leading / 2 = half-leading.<br>step3. 半行间距分别添加到 content area 的顶部和底部.即得到 inline box.</p>
