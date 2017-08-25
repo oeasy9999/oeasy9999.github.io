@@ -188,7 +188,7 @@ body {
   font-family: 'Monda', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 14px;
   line-height: 2;
-  color: #555;
+  color: #fff;
   background: #f5f7f9;
 }
 @media (max-width: 767px) {
@@ -818,7 +818,7 @@ pre .javascript .function {
   font-size: 14px;
   color: #fff;
   background: #222;
-  border: 2px solid #555;
+  border: 2px solid #fff;
   text-decoration: none;
   border-radius: 0;
   transition-property: background-color;
@@ -836,7 +836,7 @@ pre .javascript .function {
   display: block;
   width: 22px;
   height: 2px;
-  background: #555;
+  background: #fff;
   border-radius: 1px;
 }
 .btn-bar+.btn-bar {
@@ -1416,7 +1416,7 @@ pre .javascript .function {
   margin-top: 50px;
 }
 .post-button .btn {
-  color: #555;
+  color: #fff;
   font-size: 14px;
   background: #fff;
   border-radius: 2px;
@@ -1800,7 +1800,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b5feb0;
+  background: #2bcb90;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2846,7 +2846,7 @@ pre .javascript .function {
 .sidebar-inner {
   box-sizing: border-box;
   width: 240px;
-  color: #555;
+  color: #fff;
   background: none;
   box-shadow: initial;
   border-radius: initial;
