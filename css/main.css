@@ -1416,7 +1416,7 @@ pre .javascript .function {
   margin-top: 50px;
 }
 .post-button .btn {
-  color: #fff;
+  color: #000;
   font-size: 14px;
   background: #fff;
   border-radius: 2px;
@@ -1800,7 +1800,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #6a0f54;
+  background: #ff5b41;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2606,7 +2606,7 @@ pre .javascript .function {
   overflow: hidden;
   padding: 0;
   width: 240px;
-  background: none;
+  background: #fff;
   box-shadow: initial;
   border-radius: initial;
 }
@@ -2796,6 +2796,7 @@ pre .javascript .function {
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
+  color: #000;
 }
 .menu .menu-item a:hover,
 .menu-item-active a {
