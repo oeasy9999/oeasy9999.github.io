@@ -284,7 +284,7 @@ a {
 }
 a:hover {
   color: #fccde2;
-  border-bottom-color: #fcefee;
+  border-bottom-color: #fccde2;
 }
 blockquote {
   margin: 0;
@@ -1800,7 +1800,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d7853b;
+  background: #7cb6e3;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1876,7 +1876,7 @@ pre .javascript .function {
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
   transition-property: all;
-  color: #666;
+  color: #fff;
   border-bottom-color: #ccc;
 }
 .post-toc ol a:hover {
