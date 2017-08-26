@@ -10,14 +10,28 @@
 <p>line-height 属性设置行间的距离（行高）。不允许使用负值。<br>该属性会影响行框的布局。在应用到一个块级元素时，它定义了该元素中基线之间的最小距离而不是最大距离。<br>line-height 与 font-size 的计算值之差（在 CSS 中成为“行间距”）分为两半，分别加到一个文本内容的顶部和底部。可以包含这些内容的最小框就是行框。</p>
 </blockquote>
 <p>刚看到这段话时我是费解的，这里面有太多知识点了，涉及到 行高，行框，基线，font-size，行间距等概念，有必要细说从头，先总结一下几个基本概念</p>
-<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="x-height"><a href="#x-height" class="headerlink" title="x-height"></a>x-height</h3><p>在西文字体排印学中, x-height 就是指小写字母 ‘x’ 的高度；维基上有格示意图：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic1.png" style="margin-left: 10px"><br>按 <a href="http://www.zhangxinxu.com/wordpress/2015/06/about-letter-x-of-css/" target="_blank" rel="external">字母’x’在CSS世界中的角色和故事</a> 这篇文章作者的理解：</p>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="x-height"><a href="#x-height" class="headerlink" title="x-height"></a>x-height</h3><p>在西文字体排印学中, x-height 就是指小写字母 ‘x’ 的高度；维基上有示意图：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic1.png" style="margin-left: 10px"><br>按 <a href="http://www.zhangxinxu.com/wordpress/2015/06/about-letter-x-of-css/" target="_blank" rel="external">字母’x’在CSS世界中的角色和故事</a> 这篇文章作者的理解：</p>
 <ul>
 <li>ascender height: 上行线高度</li>
 <li>cap height: 大写字母高度</li>
 <li>median: 中线</li>
+<li>baseline: 基线</li>
 <li>descender height: 下行线高度</li>
 </ul>
-<p>x-height 即是基线和中线之间的距离。<br>而这里median 中线和 vertical-align: middle 又不是一个概念，middle 指的是基线往上 1/2 “x-height” 高度。可以近似为字母 “x” 交叉点的位置。<br>x 不仅衍生出了 x-height 的概念，还进一步衍生出了 ex，1ex 就是一个 x 的高度，类似 1em 就是一个大写字母 M 的宽度。</p>
+<p>根据我最近查到的资料，有几点注意：</p>
+<ol>
+<li>图上显示的所有高度都是基于基线所得到的高度(后面还会提到这点)</li>
+</ol>
+<ul>
+<li>ascender height 即是基线到 ascender 的高度</li>
+<li>cap height 即是基线到大写字母顶端的高度</li>
+<li>x-height 即是基线到中线的距离</li>
+<li>descender height 即是基线到 descender 的高度</li>
+</ul>
+<ol>
+<li>这里median 中线和 vertical-align: middle 又不是一个概念，middle 指的是基线往上 1/2 “x-height” 高度。近似为字母 “x” 交叉点的位置。</li>
+<li>x 不仅衍生出了 x-height 的概念，还进一步衍生出了 ex，1ex 就是一个 x 的高度，类似 1em 就是一个大写字母 M 的宽度。</li>
+</ol>
 <h3 id="基线，底线，顶线和中线"><a href="#基线，底线，顶线和中线" class="headerlink" title="基线，底线，顶线和中线"></a>基线，底线，顶线和中线</h3><p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic2.png" style="margin-left: 10px"></p>
 <ul>
 <li>顶线(top line): 蓝线</li>
