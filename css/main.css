@@ -1640,7 +1640,7 @@ pre .javascript .function {
   margin: 2em 0 0;
   padding: 0.5em 1em;
   border-left: 3px solid #ff1700;
-  background-color: #f9f9f9;
+  background-color: #444;
   list-style: none;
 }
 .sidebar {
@@ -1800,7 +1800,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #909a70;
+  background: #3e3d34;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1914,6 +1914,7 @@ pre .javascript .function {
 .footer {
   font-size: 14px;
   color: #999;
+  background: #444;
 }
 .footer img {
   border: none;
