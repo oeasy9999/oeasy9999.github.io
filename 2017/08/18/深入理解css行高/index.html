@@ -140,11 +140,11 @@
 <meta property="og:image" content="http://oummu6kih.bkt.clouddn.com/inline_pic12.png?imageView/2/w/350">
 <meta property="og:image" content="http://oummu6kih.bkt.clouddn.com/inline_pic13.png?imageView/2/w/350">
 <meta property="og:image" content="http://oummu6kih.bkt.clouddn.com/inline_pic14.png?imageView/2/w/350">
-<meta property="og:image" content="http://oummu6kih.bkt.clouddn.com/inline_pic15.png">
-<meta property="og:image" content="http://oummu6kih.bkt.clouddn.com/inline_pic16.png">
-<meta property="og:image" content="http://oummu6kih.bkt.clouddn.com/inline_pic17.png">
-<meta property="og:image" content="http://oummu6kih.bkt.clouddn.com/inline_pic18.png">
-<meta property="og:updated_time" content="2017-08-26T11:38:09.710Z">
+<meta property="og:image" content="http://oummu6kih.bkt.clouddn.com/inline_pic15.png?imageView/2/w/350">
+<meta property="og:image" content="http://oummu6kih.bkt.clouddn.com/inline_pic16.png?imageView/2/w/350">
+<meta property="og:image" content="http://oummu6kih.bkt.clouddn.com/inline_pic17.png?imageView/2/w/350">
+<meta property="og:image" content="http://oummu6kih.bkt.clouddn.com/inline_pic18.png?imageView/2/w/350">
+<meta property="og:updated_time" content="2017-08-26T11:43:44.120Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解css 行高">
 <meta name="twitter:description" content="最近几天在学习 CSS 基础知识，一直被 line-height, inline-block, vertical-align折磨，搜了一下这方面资料，不搜不知道一搜吓一跳，实际上这块还是值得好好研究一下的，据说line-height 和 vertical-align 这两个属性算得上是 CSS 里最难的两个属性了。这篇文章算做一个记录吧。">
@@ -711,21 +711,22 @@
 <ul>
 <li>可替换的内联元素， 如 img / input / svg 等</li>
 <li>inline-block 元素，及所有 display 值以 inline- 开头的元素，如 inline-table / inline-flex</li>
-<li>处于某种特殊格式化上下文的内联元素， 例如 flexbox 元素中的子元素都处于 flex format ting context(弹性格式化上下文)中，这些子元素的 display 值都是 <code>blockified</code><br>这类内联元素，其高度是基于 height、margin、padding和 border 属性。如果你将其 height 设置为 auto 的话，那么其高度的取值就是 line-height，其 content-area 的取值也是 line-height。</li>
+<li>处于某种特殊格式化上下文的内联元素， 例如 flexbox 元素中的子元素都处于 flex format ting context(弹性格式化上下文)中，这些子元素的 display 值都是 <code>blockified</code></li>
 </ul>
+<p>这类内联元素，其高度是基于 height、margin、padding和 border 属性。如果你将其 height 设置为 auto 的话，那么其高度的取值就是 line-height，其 content-area 的取值也是 line-height。</p>
 </blockquote>
 <h2 id="vertical-align"><a href="#vertical-align" class="headerlink" title="vertical-align"></a>vertical-align</h2><p>vertical-align也是计算 line-box 高度的重要因素之一。我们甚至可以说 vertical-align 是内联格式化上下文（IFC）中最重要的属性。默认值是 baseline<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class">p </span>&#123;</div><div class="line">    font-family: Catamaran;</div><div class="line">    font-size: <span class="number">100</span>px;</div><div class="line">    line-height: <span class="number">200</span>px;</div><div class="line">&#125;</div><div class="line"><span class="params">&lt;p&gt;</span></div><div class="line">    <span class="params">&lt;span&gt;</span>Ba<span class="params">&lt;/span&gt;</span></div><div class="line">    <span class="params">&lt;span&gt;</span>Ba<span class="params">&lt;/span&gt;</span></div><div class="line"><span class="params">&lt;/p&gt;</span></div></pre></td></tr></table></figure></p>
 <p>这时两个 span 的 baseline 是等高的，line-box 的高度就是 span 的 line-height:<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic14.png?imageView/2/w/350" style="margin-left: 10px"></p>
 <p>但是，如果第二个 span 的 font-size 变小了，<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">span</span><span class="selector-pseudo">:last-child</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">50px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>我们会发现 line-box 的高度变高了！<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic15.png" style="margin-left: 10px"></p>
+<p>我们会发现 line-box 的高度变高了！<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic15.png?imageView/2/w/350" style="margin-left: 10px"></p>
 <p>另一个例子:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">    <span class="attribute">line-height</span>: <span class="number">200px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">span</span> &#123;</div><div class="line">    <span class="attribute">font-family</span>: Catamaran;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">100px</span>;</div><div class="line">&#125;</div><div class="line">&lt;p&gt;</div><div class="line">    &lt;span&gt;Ba&lt;/span&gt;</div><div class="line">&lt;/p&gt;</div></pre></td></tr></table></figure></p>
-<p>此时 line-box 的高度并不是 200px。这里要考虑到的问题是 p 有自己的 font-family，默认值是 serif。p 的 baseline 和 span 的 baseline 位置不一样，因此最终的 line-box 比我们预想的要高一些。出现这种问题是因为浏览器认为每个 line-box 的起始位置都有一个宽度为 0 的字符（CSS 文档将其称为 strut），并将其纳入 line-box 的高度的计算中。<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic16.png" style="margin-left: 10px"></p>
+<p>此时 line-box 的高度并不是 200px。这里要考虑到的问题是 p 有自己的 font-family，默认值是 serif。p 的 baseline 和 span 的 baseline 位置不一样，因此最终的 line-box 比我们预想的要高一些。出现这种问题是因为浏览器认为每个 line-box 的起始位置都有一个宽度为 0 的字符（CSS 文档将其称为 strut），并将其纳入 line-box 的高度的计算中。<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic16.png?imageView/2/w/350"></p>
 <p>顺便一说，vertical-align 的其他 4 个值有可能有点用：</p>
 <ul>
 <li>vertical-align: top / bottom，表示与 line-box 的顶部或底部对齐</li>
-<li>vertical-align: text-top / text-bottom，表示与 content-area 的顶部或底部对齐<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic17.png" style="margin-left: 10px"></li>
+<li>vertical-align: text-top / text-bottom，表示与 content-area 的顶部或底部对齐<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic17.png?imageView/2/w/350"></li>
 </ul>
-<p>不过你依然要小心，大部分情况下，对齐的是 virtual-area，也就是一个不可见的高度。看看下面这个用 vertical-align:top 的例子：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic18.png" style="margin-left: 10px"></p>
+<p>不过你依然要小心，大部分情况下，对齐的是 virtual-area，也就是一个不可见的高度。看看下面这个用 vertical-align:top 的例子：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic18.png?imageView/2/w/350"></p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
 <li><a href="http://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align" target="_blank" rel="external">Deep dive CSS: font metrics, line-height and vertical-align</a></li>
 <li><a href="http://www.w3cplus.com/css/css-font-metrics-line-height-and-vertical-align.html" target="_blank" rel="external">深入了解CSS字体度量，行高和vertical-align</a></li>
