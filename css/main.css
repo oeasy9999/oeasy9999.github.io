@@ -218,13 +218,25 @@ h6 {
   line-height: 1.5;
   font-family: 'Roboto Slab', 'Monda', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
-h2,
-h3,
-h4,
-h5,
-h6 {
+h2 {
   margin: 20px 0 15px;
   color: #f1fea4;
+}
+h3 {
+  margin: 20px 0 15px;
+  color: #eacf79;
+}
+h4 {
+  margin: 20px 0 15px;
+  color: #ffb270;
+}
+h5 {
+  margin: 20px 0 15px;
+  color: #ff7575;
+}
+h6 {
+  margin: 20px 0 15px;
+  color: #691a40;
 }
 h1 {
   font-size: 22px;
@@ -1801,7 +1813,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #7fff22;
+  background: #9c3b50;
 }
 .links-of-blogroll {
   font-size: 13px;
