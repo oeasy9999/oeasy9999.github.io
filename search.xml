@@ -390,7 +390,8 @@
     <entry>
       <title><![CDATA[第一篇文章]]></title>
       <url>/2017/06/18/my-new-post/</url>
-      <content type="html"><![CDATA[<h5 id="任意目录下打开DOS窗口"><a href="#任意目录下打开DOS窗口" class="headerlink" title="任意目录下打开DOS窗口"></a>任意目录下打开DOS窗口</h5><ul>
+      <content type="html"><![CDATA[<p><img src="http://oummu6kih.bkt.clouddn.com/first.jpg"><br><a id="more"></a></p>
+<h5 id="任意目录下打开DOS窗口"><a href="#任意目录下打开DOS窗口" class="headerlink" title="任意目录下打开DOS窗口"></a>任意目录下打开DOS窗口</h5><ul>
 <li>按住Shift右键—-在此处打开命令窗口<h5 id="常见DOS命令"><a href="#常见DOS命令" class="headerlink" title="常见DOS命令"></a>常见DOS命令</h5></li>
 <li>盘符切换—-d: 回车</li>
 <li>列出当前目录文件或目录—-dir</li>
@@ -400,8 +401,9 @@
 <li>返回到根目录—-cd\ 回车</li>
 <li>删除文件—-del 文件名</li>
 <li>清屏—-cls 回车</li>
-<li>退出—-exit<a id="more"></a>
-<h5 id="JDK、JRE、JVM关系"><a href="#JDK、JRE、JVM关系" class="headerlink" title="JDK、JRE、JVM关系"></a>JDK、JRE、JVM关系</h5></li>
+<li>退出—-exit</li>
+</ul>
+<h5 id="JDK、JRE、JVM关系"><a href="#JDK、JRE、JVM关系" class="headerlink" title="JDK、JRE、JVM关系"></a>JDK、JRE、JVM关系</h5><ul>
 <li>JDK （Java Development Kit Java开发工具包）</li>
 <li>JRE （Java Runtime Environment Java运行环境）</li>
 <li>JVM （Java Virtual Machine Java虚拟机）</li>
