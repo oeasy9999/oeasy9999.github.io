@@ -20,15 +20,13 @@
 </ul>
 <p>根据我最近查到的资料，有几点注意：</p>
 <ol>
-<li>图上显示的所有高度都是基于基线所得到的高度(后面还会提到这点)</li>
-</ol>
-<ul>
+<li>图上显示的所有高度都是基于基线所得到的高度(后面还会提到这点)<ul>
 <li>ascender height 即是基线到 ascender 的高度</li>
 <li>cap height 即是基线到大写字母顶端的高度</li>
 <li>x-height 即是基线到中线的距离</li>
 <li>descender height 即是基线到 descender 的高度</li>
 </ul>
-<ol>
+</li>
 <li>这里median 中线和 vertical-align: middle 又不是一个概念，middle 指的是基线往上 1/2 “x-height” 高度。近似为字母 “x” 交叉点的位置。</li>
 <li>x 不仅衍生出了 x-height 的概念，还进一步衍生出了 ex，1ex 就是一个 x 的高度，类似 1em 就是一个大写字母 M 的宽度。</li>
 </ol>

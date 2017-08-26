@@ -144,7 +144,7 @@
 <meta property="og:image" content="http://oummu6kih.bkt.clouddn.com/inline_pic16.png">
 <meta property="og:image" content="http://oummu6kih.bkt.clouddn.com/inline_pic17.png">
 <meta property="og:image" content="http://oummu6kih.bkt.clouddn.com/inline_pic18.png">
-<meta property="og:updated_time" content="2017-08-26T09:41:42.885Z">
+<meta property="og:updated_time" content="2017-08-26T09:43:20.690Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解css 行高">
 <meta name="twitter:description" content="最近几天在学习 CSS 基础知识，一直被 line-height, inline-block, vertical-align折磨，搜了一下这方面资料，不搜不知道一搜吓一跳，实际上这块还是值得好好研究一下的，据说line-height 和 vertical-align 这两个属性算得上是 CSS 里最难的两个属性了。这篇文章算做一个记录吧。">
@@ -463,15 +463,13 @@
 </ul>
 <p>根据我最近查到的资料，有几点注意：</p>
 <ol>
-<li>图上显示的所有高度都是基于基线所得到的高度(后面还会提到这点)</li>
-</ol>
-<ul>
+<li>图上显示的所有高度都是基于基线所得到的高度(后面还会提到这点)<ul>
 <li>ascender height 即是基线到 ascender 的高度</li>
 <li>cap height 即是基线到大写字母顶端的高度</li>
 <li>x-height 即是基线到中线的距离</li>
 <li>descender height 即是基线到 descender 的高度</li>
 </ul>
-<ol>
+</li>
 <li>这里median 中线和 vertical-align: middle 又不是一个概念，middle 指的是基线往上 1/2 “x-height” 高度。近似为字母 “x” 交叉点的位置。</li>
 <li>x 不仅衍生出了 x-height 的概念，还进一步衍生出了 ex，1ex 就是一个 x 的高度，类似 1em 就是一个大写字母 M 的宽度。</li>
 </ol>
