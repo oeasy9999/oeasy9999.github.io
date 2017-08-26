@@ -200,12 +200,12 @@
 <h3 id="CSS-boxes-类型"><a href="#CSS-boxes-类型" class="headerlink" title="CSS boxes 类型"></a>CSS boxes 类型</h3><p>先从一段代码开始<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">	Lorem ipsum <span class="tag">&lt;<span class="name">i</span>&gt;</span>dolor sit amet<span class="tag">&lt;/<span class="name">i</span>&gt;</span>, consectetuer adipiscing elit. Voluptate incidunt in quo autem veritatis ea a similique dolores, perspiciatis, deserunt saepe corporis magni unde.</div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>这个例子中涉及到4种 boxes:</p>
 <h3 id="containing-boxes"><a href="#containing-boxes" class="headerlink" title="containing boxes"></a>containing boxes</h3><p>段落就是一种 containing box,它包含了其他的boxes<br><strong> 也可以叫做 block box, 貌似这个更贴切 </strong></p>
-<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic5.png" style="margin-left: 10px"></p>
+<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic5.png?imageView/2/w/350" style="margin-left: 10px"></p>
 <h3 id="inline-boxes"><a href="#inline-boxes" class="headerlink" title="inline boxes"></a>inline boxes</h3><p>在段落内，有一系列的 inline boxes,inline boxes 不会让内容显示成块而是排成一行。</p>
-<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic6.png" style="margin-left: 10px"></p>
+<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic6.png?imageView/2/w/350" style="margin-left: 10px"></p>
 <p>如果外部含inline属性的标签(span,a,cite等)，则属于inline boxes，如上图中的 emphasis元素就是一种 inline box;<br>如果没有特别标签的 box，则属于匿名inline boxes,如上图中另外两个为匿名 inline boxes;</p>
 <h3 id="line-boxes-line-height"><a href="#line-boxes-line-height" class="headerlink" title="line boxes(line-height ?)"></a>line boxes(line-height ?)</h3><p>在containing boxes里，一个一个的inline boxes组成了line boxes。</p>
-<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic9.png" style="margin-left: 10px"></p>
+<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic9.png?imageView/2/w/350" style="margin-left: 10px"></p>
 <h3 id="content-area"><a href="#content-area" class="headerlink" title="content area"></a>content area</h3><p>content area 是一种围绕文字看不见的box。content area的大小与font-size大小相关。</p>
 <p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic10.png?imageView/2/w/350" style="margin-left: 10px;"></p>
 <p>以上是 CSS 中四种 boxes，其中 line-box 的高度是由它所有子元素的高度计算得出的。浏览器会计算这一行里每个子元素的高度，再得出 line-box 的高度（具体来说就是从子元素的最高点到最低点的高度），所以默认情况下，一个 line-box 总是有足够的高度来容纳它的子元素。</p>
@@ -218,11 +218,11 @@
 <p>因此利用 line-height 的这个属性设置单行文字的垂直居中也就很好理解了：<br>例如，想让一行 font-size 为16px 的文字在高为 200px 的父元素里垂直居中，只需要把 line-height 设为 200px即可：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic23.png?imageView/2/w/350" style="margin-left: 10px"></p>
 <h3 id="inline-boxes-与-line-boxes"><a href="#inline-boxes-与-line-boxes" class="headerlink" title="inline boxes 与 line boxes"></a>inline boxes 与 line boxes</h3><p><font style="color:red">情况一</font><br>line box 高度取决于它内部最高的 inline box(或被替换的元素,如：图片)</p>
 <ol>
-<li>最高的 inline box 可以是匿名 inline box<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic24.png" style="margin-left: 10px;"></li>
-<li>也可以是增大 line-height 后的 inline box<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic25.png" style="margin-left: 10px;"></li>
-<li>更大 font-size 的 inline box<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic26.png" style="margin-left: 10px;"></li>
-<li>存在上标或下标<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic27.png" style="margin-left: 10px;"></li>
-<li>可替换元素，如一张图片<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic28.png" style="margin-left: 10px;"><br><font style="color:red">注意：</font><br>当 inline box 带有 padding, margin, border时，inline box高度会超过 line box 的高度，但不会影响 line box.<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic29.png" style="margin-left: 10px; height: 350px; width: 800px;"></li>
+<li>最高的 inline box 可以是匿名 inline box<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic24.png?imageView/2/w/350" style="margin-left: 10px;"></li>
+<li>也可以是增大 line-height 后的 inline box<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic25.png?imageView/2/w/350" style="margin-left: 10px;"></li>
+<li>更大 font-size 的 inline box<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic26.png?imageView/2/w/350" style="margin-left: 10px;"></li>
+<li>存在上标或下标<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic27.png?imageView/2/w/350" style="margin-left: 10px;"></li>
+<li>可替换元素，如一张图片<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic28.png?imageView/2/w/350" style="margin-left: 10px;"><br><font style="color:red">注意：</font><br>当 inline box 带有 padding, margin, border时，inline box高度会超过 line box 的高度，但不会影响 line box.<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic29.png?imageView/2/w/350" style="margin-left: 10px;"></li>
 </ol>
 <p>这两者之间的关系准确地说应该是：line box 的高度是由它所有子元素(inline boxes)的高度计算得出的。具体来说就是子元素的最高点到最低点的高度。<br>///////////////////////////////////////////////////////////////////////////////</p>
 <p>到这里，有必要提一下 <a href="http://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align" target="_blank" rel="external">Deep dive CSS: font metrics, line-height and vertical-align - Vincent De Oliveira</a> 这篇文章了，国内也有译文，我认为知乎上这篇 <a href="https://zhuanlan.zhihu.com/p/25808995" target="_blank" rel="external">深入理解 CSS：字体度量、line-height 和 vertical-align</a> 翻译的更得我心，这里借鉴一下</p>
