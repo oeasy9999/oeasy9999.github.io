@@ -1302,7 +1302,7 @@ pre .javascript .function {
   opacity: 0.6;
 }
 .posts-collapse .post-title a {
-  color: #666;
+  color: #87daff;
   border-bottom: none;
 }
 .page-home .post-type-quote .post-header,
@@ -1640,7 +1640,7 @@ pre .javascript .function {
   margin: 2em 0 0;
   padding: 0.5em 1em;
   border-left: 3px solid #ff1700;
-  background-color: #444;
+  background-color: #333;
   list-style: none;
 }
 .sidebar {
@@ -1800,7 +1800,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #eee861;
+  background: #afffb1;
 }
 .links-of-blogroll {
   font-size: 13px;
