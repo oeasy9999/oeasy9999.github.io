@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://oeasy.coding.me/"/>
-  <updated>2017-08-26T09:46:30.924Z</updated>
+  <updated>2017-08-26T10:14:06.557Z</updated>
   <id>http://oeasy.coding.me/</id>
   
   <author>
@@ -20,14 +20,15 @@
     <link href="http://oeasy.coding.me/2017/08/18/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3css%E8%A1%8C%E9%AB%98/"/>
     <id>http://oeasy.coding.me/2017/08/18/深入理解css行高/</id>
     <published>2017-08-18T14:06:30.000Z</published>
-    <updated>2017-08-26T09:46:30.924Z</updated>
+    <updated>2017-08-26T10:14:06.557Z</updated>
     
     <content type="html"><![CDATA[<p>最近几天在学习 CSS 基础知识，一直被 line-height, inline-block, vertical-align折磨，搜了一下这方面资料，不搜不知道一搜吓一跳，实际上这块还是值得好好研究一下的，据说line-height 和 vertical-align 这两个属性算得上是 CSS 里最难的两个属性了。这篇文章算做一个记录吧。<br><a id="more"></a><br>既然是 CSS 中比较难的属性，总要有个切入点吧，思来想去觉得还是从 W3C 中关于 line-height 的定义说起吧：</p>
 <blockquote>
 <p>line-height 属性设置行间的距离（行高）。不允许使用负值。<br>该属性会影响行框的布局。在应用到一个块级元素时，它定义了该元素中基线之间的最小距离而不是最大距离。<br>line-height 与 font-size 的计算值之差（在 CSS 中成为“行间距”）分为两半，分别加到一个文本内容的顶部和底部。可以包含这些内容的最小框就是行框。</p>
 </blockquote>
 <p>刚看到这段话时我是费解的，这里面有太多知识点了，涉及到 行高，行框，基线，font-size，行间距等概念，有必要细说从头，先总结一下几个基本概念</p>
-<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="x-height"><a href="#x-height" class="headerlink" title="x-height"></a>x-height</h3><p>在西文字体排印学中, x-height 就是指小写字母 ‘x’ 的高度；维基上有示意图：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic1.png" style="margin-left: 10px"><br>按 <a href="http://www.zhangxinxu.com/wordpress/2015/06/about-letter-x-of-css/" target="_blank" rel="external">字母’x’在CSS世界中的角色和故事</a> 这篇文章作者的理解：</p>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><pre><code>### x-height
+</code></pre><p>在西文字体排印学中, x-height 就是指小写字母 ‘x’ 的高度；维基上有示意图：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic1.png" style="margin-left: 10px"><br>按 <a href="http://www.zhangxinxu.com/wordpress/2015/06/about-letter-x-of-css/" target="_blank" rel="external">字母’x’在CSS世界中的角色和故事</a> 这篇文章作者的理解：</p>
 <ul>
 <li>ascender height: 上行线高度</li>
 <li>cap height: 大写字母高度</li>
@@ -47,25 +48,6 @@
 <li>这里median 中线和 vertical-align: middle 又不是一个概念，middle 指的是基线往上 1/2 “x-height” 高度。近似为字母 “x” 交叉点的位置。</li>
 <li>x 不仅衍生出了 x-height 的概念，还进一步衍生出了 ex，1ex 就是一个 x 的高度，类似 1em 就是一个大写字母 M 的宽度。</li>
 </ol>
-<ul>
-<li>南京<ul>
-<li>玄武湖</li>
-<li>中山陵</li>
-<li>鸡鸣寺</li>
-</ul>
-</li>
-<li>杭州<ul>
-<li>西湖<ul>
-<li>苏堤</li>
-<li>湖心亭</li>
-<li>太子湾</li>
-</ul>
-</li>
-<li>九溪</li>
-<li>灵隐</li>
-</ul>
-</li>
-</ul>
 <h3 id="基线，底线，顶线和中线"><a href="#基线，底线，顶线和中线" class="headerlink" title="基线，底线，顶线和中线"></a>基线，底线，顶线和中线</h3><p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic2.png" style="margin-left: 10px"></p>
 <ul>
 <li>顶线(top line): 蓝线</li>
@@ -92,8 +74,9 @@
 <li>长度值形式：body { line-height: 20px; }</li>
 <li>纯数字形式：body { line-height: 1; }</li>
 </ol>
-<h3 id="line-height-继承"><a href="#line-height-继承" class="headerlink" title="line-height 继承"></a>line-height 继承</h3><p>line-height 的继承比较复杂，需要分不同方式计算得到：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;h1&gt;</div><div class="line">	consect etuer adipi scing elitsed diam nonummy</div><div class="line">&lt;/h1&gt;</div><div class="line">&lt;p&gt;</div><div class="line">	Lorem ipsum dolor sit amet consect etuer adipi scing elit seddiam nonummy nibh enismod tinunt ut laoreet dolore magna aliquam erat volut. Ut wisi enim ad minim veniam</div><div class="line">&lt;/p&gt;</div><div class="line">&lt;<span class="keyword">div</span> <span class="built_in">id</span>=<span class="string">"footer"</span>&gt;</div><div class="line">	Duis autem vel eum iriure dolor <span class="keyword">in</span> hendrerit <span class="keyword">in</span> vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis <span class="keyword">at</span> vero eros.</div><div class="line">&lt;/<span class="keyword">div</span>&gt;</div></pre></td></tr></table></figure></p>
-<h4 id="百分比"><a href="#百分比" class="headerlink" title="百分比"></a>百分比</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span>&#123;</div><div class="line">	<span class="attribute">font-size</span>: <span class="number">16px</span>;</div><div class="line">	<span class="attribute">line-height</span>: <span class="number">100%</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">font-size</span>: <span class="number">32px</span>; &#125;</div><div class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">font-size</span>: <span class="number">16px</span>; &#125;</div><div class="line"><span class="selector-id">#footer</span> &#123; <span class="attribute">font-size</span>: <span class="number">12px</span>; &#125;</div></pre></td></tr></table></figure>
+<h3 id="line-height-继承"><a href="#line-height-继承" class="headerlink" title="line-height 继承"></a>line-height 继承</h3><p>line-height 的继承比较复杂，需要分不同方式计算得到：<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="params">&lt;body&gt;</span></div><div class="line">	<span class="params">&lt;h1&gt;</span></div><div class="line">		<span class="comment">//内容略</span></div><div class="line">	<span class="params">&lt;/h1&gt;</span></div><div class="line">	<span class="params">&lt;p&gt;</span></div><div class="line">		<span class="comment">//内容略</span></div><div class="line">	<span class="params">&lt;/p&gt;</span></div><div class="line">	<span class="params">&lt;div id="footer"&gt;</span></div><div class="line">		<span class="comment">//内容略</span></div><div class="line">	<span class="params">&lt;/div&gt;</span></div><div class="line"><span class="params">&lt;/body&gt;</span></div></pre></td></tr></table></figure></p>
+<pre><code>#### 百分比
+</code></pre><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span>&#123;</div><div class="line">	<span class="attribute">font-size</span>: <span class="number">16px</span>;</div><div class="line">	<span class="attribute">line-height</span>: <span class="number">100%</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">font-size</span>: <span class="number">32px</span>; &#125;</div><div class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">font-size</span>: <span class="number">16px</span>; &#125;</div><div class="line"><span class="selector-id">#footer</span> &#123; <span class="attribute">font-size</span>: <span class="number">12px</span>; &#125;</div></pre></td></tr></table></figure>
 <p>当 line-height 为百分比时，所有继承下来的元素会忽略本身的 font-size，而使用相同的计算来的 line-height</p>
 <table>
 <thead>
@@ -131,7 +114,8 @@
 </tr>
 </tbody>
 </table>
-<h4 id="长度"><a href="#长度" class="headerlink" title="长度"></a>长度</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span>&#123;</div><div class="line">	<span class="attribute">font-size</span>: <span class="number">16px</span>;</div><div class="line">	<span class="attribute">line-height</span>: <span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">font-size</span>: <span class="number">32px</span>; &#125;</div><div class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">font-size</span>: <span class="number">16px</span>; &#125;</div><div class="line"><span class="selector-id">#footer</span> &#123; <span class="attribute">font-size</span>: <span class="number">12px</span>; &#125;</div></pre></td></tr></table></figure>
+<pre><code>#### 长度
+</code></pre><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span>&#123;</div><div class="line">	<span class="attribute">font-size</span>: <span class="number">16px</span>;</div><div class="line">	<span class="attribute">line-height</span>: <span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">font-size</span>: <span class="number">32px</span>; &#125;</div><div class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">font-size</span>: <span class="number">16px</span>; &#125;</div><div class="line"><span class="selector-id">#footer</span> &#123; <span class="attribute">font-size</span>: <span class="number">12px</span>; &#125;</div></pre></td></tr></table></figure>
 <p>当 line-height 为长度值时，所有继承下来的元素会忽略本身的 font-size，而使用相同的继承来的 line-height</p>
 <table>
 <thead>
@@ -169,7 +153,8 @@
 </tr>
 </tbody>
 </table>
-<h4 id="normal"><a href="#normal" class="headerlink" title="normal"></a>normal</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span>&#123;</div><div class="line">	<span class="attribute">font-size</span>: <span class="number">16px</span>;</div><div class="line">	<span class="attribute">line-height</span>: normal;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">font-size</span>: <span class="number">32px</span>; &#125;</div><div class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">font-size</span>: <span class="number">16px</span>; &#125;</div><div class="line"><span class="selector-id">#footer</span> &#123; <span class="attribute">font-size</span>: <span class="number">12px</span>; &#125;</div></pre></td></tr></table></figure>
+<pre><code>#### normal
+</code></pre><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span>&#123;</div><div class="line">	<span class="attribute">font-size</span>: <span class="number">16px</span>;</div><div class="line">	<span class="attribute">line-height</span>: normal;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">font-size</span>: <span class="number">32px</span>; &#125;</div><div class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">font-size</span>: <span class="number">16px</span>; &#125;</div><div class="line"><span class="selector-id">#footer</span> &#123; <span class="attribute">font-size</span>: <span class="number">12px</span>; &#125;</div></pre></td></tr></table></figure>
 <p>当 line-height 为 normal 时，所有继承下来的元素不会忽略本身的 font-size，而使用基于 font-size 计算出来的 line-height,而normal 的值根据浏览器的不同会有细微的差别</p>
 <table>
 <thead>
@@ -207,7 +192,8 @@
 </tr>
 </tbody>
 </table>
-<h4 id="纯数字"><a href="#纯数字" class="headerlink" title="纯数字"></a>纯数字</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span>&#123;</div><div class="line">	<span class="attribute">font-size</span>: <span class="number">16px</span>;</div><div class="line">	<span class="attribute">line-height</span>: <span class="number">1.5</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">font-size</span>: <span class="number">32px</span>; &#125;</div><div class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">font-size</span>: <span class="number">16px</span>; &#125;</div><div class="line"><span class="selector-id">#footer</span> &#123; <span class="attribute">font-size</span>: <span class="number">12px</span>; &#125;</div></pre></td></tr></table></figure>
+<pre><code>#### 纯数字
+</code></pre><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span>&#123;</div><div class="line">	<span class="attribute">font-size</span>: <span class="number">16px</span>;</div><div class="line">	<span class="attribute">line-height</span>: <span class="number">1.5</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">font-size</span>: <span class="number">32px</span>; &#125;</div><div class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">font-size</span>: <span class="number">16px</span>; &#125;</div><div class="line"><span class="selector-id">#footer</span> &#123; <span class="attribute">font-size</span>: <span class="number">12px</span>; &#125;</div></pre></td></tr></table></figure>
 <p>当 line-height 为纯数字时，所有继承下来的元素不会忽略本身的 font-size，而使用基于 font-size 计算出来的 line-height</p>
 <table>
 <thead>
@@ -245,7 +231,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="CSS-boxes-类型"><a href="#CSS-boxes-类型" class="headerlink" title="CSS boxes 类型"></a>CSS boxes 类型</h3><p>先从一段代码开始<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">	Lorem ipsum <span class="tag">&lt;<span class="name">i</span>&gt;</span>dolor sit amet<span class="tag">&lt;/<span class="name">i</span>&gt;</span>, consectetuer adipiscing elit. Voluptate incidunt in quo autem veritatis ea a similique dolores, perspiciatis, deserunt saepe corporis magni unde.</div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="CSS-boxes-类型"><a href="#CSS-boxes-类型" class="headerlink" title="CSS boxes 类型"></a>CSS boxes 类型</h3><p>先从一段代码开始<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">	Lorem ipsum <span class="tag">&lt;<span class="name">i</span>&gt;</span>dolor sit amet<span class="tag">&lt;/<span class="name">i</span>&gt;</span>, consectetuer adipiscing elit. Voluptate<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">	incidunt in quo autem veritatis ea a similique dolores, perspiciatis,<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">	deserunt saepe corporis magni unde.</div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>这个例子中涉及到4种 boxes:</p>
 <h3 id="containing-boxes"><a href="#containing-boxes" class="headerlink" title="containing boxes"></a>containing boxes</h3><p>段落就是一种 containing box,它包含了其他的boxes<br><strong> 也可以叫做 block box, 貌似这个更贴切 </strong></p>
 <p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic5.png?imageView/2/w/350" style="margin-left: 10px"></p>
@@ -257,7 +243,7 @@
 <h3 id="content-area"><a href="#content-area" class="headerlink" title="content area"></a>content area</h3><p>content area 是一种围绕文字看不见的box。content area的大小与font-size大小相关。</p>
 <p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic10.png?imageView/2/w/350" style="margin-left: 10px;"></p>
 <p>以上是 CSS 中四种 boxes，其中 line-box 的高度是由它所有子元素的高度计算得出的。浏览器会计算这一行里每个子元素的高度，再得出 line-box 的高度（具体来说就是从子元素的最高点到最低点的高度），所以默认情况下，一个 line-box 总是有足够的高度来容纳它的子元素。</p>
-<p>** 四者关系：containing box &gt; line box &gt; inline box = line-height = top half-leading + content area + buttom half-leading</p>
+<p><strong> 四者关系：<font style="color: red">containing box</font> &gt; <font style="color: red">line box</font> &gt;= <font style="color: red">inline box</font> = top half-leading + <font style="color: red">content area</font> + buttom half-leading = line-height </strong></p>
 <h3 id="line-height-与-inline-boxes"><a href="#line-height-与-inline-boxes" class="headerlink" title="line-height 与 inline boxes"></a>line-height 与 inline boxes</h3><p>line-height 分三步作用于 inline boxes 上：<br>step1. 计算出 line-height 和 font-size 的差值得到 leading,即是行间距. line-height - font-size = leading.<br>step2. 计算出半行间距. leading / 2 = half-leading.<br>step3. 半行间距分别添加到 content area 的顶部和底部.即得到 inline box.</p>
 <p>一个例子：line-height 为 20px，font-size 为16px,<br>leading 为 20px - 16px = 4px<br>half-leading 为 4px / 2 = 2px</p>
 <p>Top half-leading: 2px<br>Content area: 160x<br>Bottom half-leading: 2px<br>Total height: 20px</p>
