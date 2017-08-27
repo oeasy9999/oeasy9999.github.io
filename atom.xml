@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://oeasy.coding.me/"/>
-  <updated>2017-08-26T11:43:44.120Z</updated>
+  <updated>2017-08-27T02:45:35.251Z</updated>
   <id>http://oeasy.coding.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://oeasy.coding.me/2017/08/18/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3css%E8%A1%8C%E9%AB%98/"/>
     <id>http://oeasy.coding.me/2017/08/18/深入理解css行高/</id>
     <published>2017-08-18T14:06:30.000Z</published>
-    <updated>2017-08-26T11:43:44.120Z</updated>
+    <updated>2017-08-27T02:45:35.251Z</updated>
     
     <content type="html"><![CDATA[<p>最近几天在学习 CSS 基础知识，一直被 line-height, inline-block, vertical-align折磨，搜了一下这方面资料，不搜不知道一搜吓一跳，实际上这块还是值得好好研究一下的，据说line-height 和 vertical-align 这两个属性算得上是 CSS 里最难的两个属性了。这篇文章算做一个记录吧。<br><a id="more"></a><br>既然是 CSS 中比较难的属性，总要有个切入点吧，思来想去觉得还是从 W3C 中关于 line-height 的定义说起吧：</p>
 <blockquote>
@@ -228,16 +228,16 @@
 </tr>
 </tbody>
 </table>
-<h2 id="CSS中-boxes-类型"><a href="#CSS中-boxes-类型" class="headerlink" title="CSS中 boxes 类型"></a>CSS中 boxes 类型</h2><p>先从一段代码开始<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">	Lorem ipsum <span class="tag">&lt;<span class="name">i</span>&gt;</span>dolor sit amet<span class="tag">&lt;/<span class="name">i</span>&gt;</span>, consectetuer adipiscing elit. Voluptate<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">	incidunt in quo autem veritatis ea a similique dolores, perspiciatis,<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">	deserunt saepe corporis magni unde.</div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="行内框盒子模型"><a href="#行内框盒子模型" class="headerlink" title="行内框盒子模型"></a>行内框盒子模型</h2><p>先从一段代码开始<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">	Lorem ipsum <span class="tag">&lt;<span class="name">i</span>&gt;</span>dolor sit amet<span class="tag">&lt;/<span class="name">i</span>&gt;</span>, consectetuer adipiscing elit. Voluptate<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">	incidunt in quo autem veritatis ea a similique dolores, perspiciatis,<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">	deserunt saepe corporis magni unde.</div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>这个例子中涉及到4种 boxes:</p>
-<h3 id="containing-boxes"><a href="#containing-boxes" class="headerlink" title="containing boxes"></a>containing boxes</h3><p>段落就是一种 containing box,它包含了其他的boxes<br><strong> 也可以叫做 block box, 貌似这个更贴切 </strong></p>
+<h3 id="包含盒子-containing-boxes"><a href="#包含盒子-containing-boxes" class="headerlink" title="包含盒子 containing boxes"></a>包含盒子 containing boxes</h3><p>段落就是一种 containing box,它包含了其他的boxes<br><strong> 也可以叫做 block box, 貌似这个更贴切 </strong></p>
 <p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic5.png?imageView/2/w/350" style="margin-left: 10px"></p>
-<h3 id="inline-boxes"><a href="#inline-boxes" class="headerlink" title="inline boxes"></a>inline boxes</h3><p>在段落内，有一系列的 inline boxes,inline boxes 不会让内容显示成块而是排成一行。</p>
+<h3 id="行框盒子-line-boxes-line-height"><a href="#行框盒子-line-boxes-line-height" class="headerlink" title="行框盒子 line boxes(line-height ?)"></a>行框盒子 line boxes(line-height ?)</h3><p>在containing boxes里，一个一个的inline boxes组成了line boxes。</p>
+<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic9.png?imageView/2/w/350" style="margin-left: 10px"></p>
+<h3 id="内联盒子-inline-boxes"><a href="#内联盒子-inline-boxes" class="headerlink" title="内联盒子 inline boxes"></a>内联盒子 inline boxes</h3><p>在段落内，有一系列的 inline boxes,inline boxes 不会让内容显示成块而是排成一行。</p>
 <p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic6.png?imageView/2/w/350" style="margin-left: 10px"></p>
 <p>如果外部含inline属性的标签(span,a,cite等)，则属于inline boxes，如上图中的 emphasis元素就是一种 inline box;<br>如果没有特别标签的 box，则属于匿名inline boxes,如上图中另外两个为匿名 inline boxes;</p>
-<h3 id="line-boxes-line-height"><a href="#line-boxes-line-height" class="headerlink" title="line boxes(line-height ?)"></a>line boxes(line-height ?)</h3><p>在containing boxes里，一个一个的inline boxes组成了line boxes。</p>
-<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic9.png?imageView/2/w/350" style="margin-left: 10px"></p>
-<h3 id="content-area"><a href="#content-area" class="headerlink" title="content area"></a>content area</h3><p>content area 是一种围绕文字看不见的box。content area的大小与font-size大小相关。</p>
+<h3 id="内容区域-content-area"><a href="#内容区域-content-area" class="headerlink" title="内容区域 content area"></a>内容区域 content area</h3><p>content area 是一种围绕文字看不见的box。content area的大小与font-size大小相关。</p>
 <p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic10.png?imageView/2/w/350" style="margin-left: 10px;"></p>
 <p>以上是 CSS 中四种 boxes，其中 line-box 的高度是由它所有子元素的高度计算得出的。浏览器会计算这一行里每个子元素的高度，再得出 line-box 的高度（具体来说就是从子元素的最高点到最低点的高度），所以默认情况下，一个 line-box 总是有足够的高度来容纳它的子元素。</p>
 <p><strong> 四者关系：<font style="color: red">containing box</font> &gt; <font style="color: red">line box</font> &gt;= <font style="color: red">inline box</font> = (top half-leading + <font style="color: red">content area</font> + buttom half-leading) = line-height </strong></p>
@@ -265,13 +265,13 @@
 <h2 id="font-size"><a href="#font-size" class="headerlink" title="font-size"></a>font-size</h2><p>到这里，有必要提一下 <a href="http://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align" target="_blank" rel="external">Deep dive CSS: font metrics, line-height and vertical-align - Vincent De Oliveira</a> 这篇文章了，国内也有译文，我认为知乎上这篇 <a href="https://zhuanlan.zhihu.com/p/25808995" target="_blank" rel="external">深入理解 CSS：字体度量、line-height 和 vertical-align</a> 翻译的更得我心，这里借鉴一下。<br>同样大小的字号，不同的字体显示出来的大小却是不一样的：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic3.png?imageView/2/w/350" style="margin-left: 10px"><br>原因就在于字体设计过程中的原理，这里就不细说了，有兴趣的同学可直接查看上面的原文或者译文，我们要知道的就是：以Catamaran字体为例，当我们设置 font-size:100px 时，这个字体放到 FontForge 中可以看到，上行线高度 ascender height 是110px,下行线高度 descender height 是54px,大写字母的高度 cap height 是68px, x-height 是49px, 所以计算文字高度是110px + 54px = 164px。这个计算出来的高度决定了 HTML 元素的 content-area（内容区域，上文提到的内容区），可以认为 content-area 就是 background 作用的区域。</p>
 <p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic4.png?imageView/2/w/350" style="margin-left: 10px"></p>
 <p>所以对于 Catamaran这款字体， 1ex = 49px，1em = 100px，而不是 164px。（em 是基于 font-size，而不是基于计算出来的高度）</p>
-<h2 id="再提-line-height"><a href="#再提-line-height" class="headerlink" title="再提 line-height"></a>再提 line-height</h2><p>在 <a href="http://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align" target="_blank" rel="external">Deep dive CSS: font metrics, line-height and vertical-align</a> 这篇博文中作者提出一个概念： virtual-area,  一个内联元素有两个高度：content-area 高度和 virtual-area 高度。</p>
+<h2 id="再说-line-height"><a href="#再说-line-height" class="headerlink" title="再说 line-height"></a>再说 line-height</h2><p>在 <a href="http://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align" target="_blank" rel="external">Deep dive CSS: font metrics, line-height and vertical-align</a> 这篇博文中作者提出一个概念： virtual-area,  一个内联元素有两个高度：content-area 高度和 virtual-area 高度。</p>
 <ul>
 <li>content-area 的高度是由字体度量定义的(我的理解就是 font-size);</li>
 <li>vitual-area 的高度就是 line-height，这个高度用于计算 line-box 的高度;</li>
 </ul>
 <p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic11.png?imageView/2/w/350" style="margin-left: 10px"></p>
-<p>所以在这篇文章中认为 line-height 表示两个基线之间的距离是个谣言，在 CSS 里：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic12.png?imageView/2/w/350" style="margin-left: 10px"></p>
+<p>所以在这篇文章中认为 line-height 表示两个基线之间的距离是个谣言，在 CSS 里：line-height就是行高，就是这行文字所占的高度。可以理解为两行文本基线之间的距离，或者行与行之间的距离。<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic12.png?imageView/2/w/350" style="margin-left: 10px"></p>
 <p>virtual-area 和 content-area 高度的差距(即：line-height 和 font-size 的差距)叫做 leading。leading 的一半会被加到 content-area 顶部，另一半会被加到底部。因此 content-area 总是处于 virtual-area 的中间。</p>
 <p>当 line-height 的值是一个数字时，其实就是相对 font-size 的倍数，而不是相对于 content-area。所以 line-height:1 很有可能使得 virtual-area 比 content-area 矮，从而引发很多其他的问题。</p>
 <p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic13.png?imageView/2/w/350" style="margin-left: 10px"></p>
