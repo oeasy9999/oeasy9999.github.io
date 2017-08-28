@@ -144,7 +144,7 @@
 <meta property="og:image" content="http://oummu6kih.bkt.clouddn.com/inline_pic16.png?imageView/2/w/350">
 <meta property="og:image" content="http://oummu6kih.bkt.clouddn.com/inline_pic17.png?imageView/2/w/350">
 <meta property="og:image" content="http://oummu6kih.bkt.clouddn.com/inline_pic18.png?imageView/2/w/350">
-<meta property="og:updated_time" content="2017-08-27T02:45:35.251Z">
+<meta property="og:updated_time" content="2017-08-28T14:30:48.322Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解css 行高">
 <meta name="twitter:description" content="最近几天在学习 CSS 基础知识，一直被 line-height, inline-block, vertical-align折磨，搜了一下这方面资料，不搜不知道一搜吓一跳，实际上这块还是值得好好研究一下的，据说line-height 和 vertical-align 这两个属性算得上是 CSS 里最难的两个属性了。这篇文章算做一个记录吧。">
@@ -474,7 +474,7 @@
 <li>x 不仅衍生出了 x-height 的概念，还进一步衍生出了 ex，1ex 就是一个 x 的高度，类似 1em 就是一个大写字母 M 的宽度。</li>
 </ol>
 <hr>
-<h3 id="基线，底线，顶线和中线"><a href="#基线，底线，顶线和中线" class="headerlink" title="基线，底线，顶线和中线"></a>基线，底线，顶线和中线</h3><p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic2.png" style="margin-left: 10px"></p>
+<h3 id="基线，底线，顶线和中线"><a href="#基线，底线，顶线和中线" class="headerlink" title="基线，底线，顶线和中线"></a>基线，底线，顶线和中线</h3><p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic2.png"></p>
 <ul>
 <li>顶线(top line): 蓝线</li>
 <li>中线(middle line): 黄线</li>
@@ -657,50 +657,50 @@
 <h2 id="行内框盒子模型"><a href="#行内框盒子模型" class="headerlink" title="行内框盒子模型"></a>行内框盒子模型</h2><p>先从一段代码开始<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">	Lorem ipsum <span class="tag">&lt;<span class="name">i</span>&gt;</span>dolor sit amet<span class="tag">&lt;/<span class="name">i</span>&gt;</span>, consectetuer adipiscing elit. Voluptate<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">	incidunt in quo autem veritatis ea a similique dolores, perspiciatis,<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">	deserunt saepe corporis magni unde.</div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>这个例子中涉及到4种 boxes:</p>
 <h3 id="包含盒子-containing-boxes"><a href="#包含盒子-containing-boxes" class="headerlink" title="包含盒子 containing boxes"></a>包含盒子 containing boxes</h3><p>段落就是一种 containing box,它包含了其他的boxes<br><strong> 也可以叫做 block box, 貌似这个更贴切 </strong></p>
-<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic5.png?imageView/2/w/350" style="margin-left: 10px"></p>
+<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic5.png?imageView/2/w/350"></p>
 <h3 id="行框盒子-line-boxes-line-height"><a href="#行框盒子-line-boxes-line-height" class="headerlink" title="行框盒子 line boxes(line-height ?)"></a>行框盒子 line boxes(line-height ?)</h3><p>在containing boxes里，一个一个的inline boxes组成了line boxes。</p>
-<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic9.png?imageView/2/w/350" style="margin-left: 10px"></p>
+<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic9.png?imageView/2/w/350"></p>
 <h3 id="内联盒子-inline-boxes"><a href="#内联盒子-inline-boxes" class="headerlink" title="内联盒子 inline boxes"></a>内联盒子 inline boxes</h3><p>在段落内，有一系列的 inline boxes,inline boxes 不会让内容显示成块而是排成一行。</p>
-<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic6.png?imageView/2/w/350" style="margin-left: 10px"></p>
+<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic6.png?imageView/2/w/350"></p>
 <p>如果外部含inline属性的标签(span,a,cite等)，则属于inline boxes，如上图中的 emphasis元素就是一种 inline box;<br>如果没有特别标签的 box，则属于匿名inline boxes,如上图中另外两个为匿名 inline boxes;</p>
 <h3 id="内容区域-content-area"><a href="#内容区域-content-area" class="headerlink" title="内容区域 content area"></a>内容区域 content area</h3><p>content area 是一种围绕文字看不见的box。content area的大小与font-size大小相关。</p>
-<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic10.png?imageView/2/w/350" style="margin-left: 10px;"></p>
+<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic10.png?imageView/2/w/350"></p>
 <p>以上是 CSS 中四种 boxes，其中 line-box 的高度是由它所有子元素的高度计算得出的。浏览器会计算这一行里每个子元素的高度，再得出 line-box 的高度（具体来说就是从子元素的最高点到最低点的高度），所以默认情况下，一个 line-box 总是有足够的高度来容纳它的子元素。</p>
 <p><strong> 四者关系：<font style="color: red">containing box</font> &gt; <font style="color: red">line box</font> &gt;= <font style="color: red">inline box</font> = (top half-leading + <font style="color: red">content area</font> + buttom half-leading) = line-height </strong></p>
 <h2 id="line-height-与-inline-boxes"><a href="#line-height-与-inline-boxes" class="headerlink" title="line-height 与 inline boxes"></a>line-height 与 inline boxes</h2><p>line-height 分三步作用于 inline boxes 上：<br>step1. 计算出 line-height 和 font-size 的差值得到 leading,即是行间距. line-height - font-size = leading.<br>step2. 计算出半行间距. leading / 2 = half-leading.<br>step3. 半行间距分别添加到 content area 的顶部和底部.即得到 inline box.</p>
 <p>例子：line-height 为 20px，font-size 为16px; leading 为 20px - 16px = 4px; half-leading 为 4px / 2 = 2px.</p>
-<p>Top half-leading: 2px<br>Content area: 160x<br>Bottom half-leading: 2px<br>Total height: 20px<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic20.png?imageView/2/w/350" style="margin-left: 10px;"></p>
-<p>然而有时候,如果 line-height 小于 font-size 就造成 inline box 小于 content area。<br>例子： line-height 为 12px, font-size 为16px，显示效果就会这个样子：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic21.png?imageView/2/w/350" style="margin-left: 10px;"></p>
-<p>当然，line-height 也可以为0：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic22.png?imageView/2/w/350" style="margin-left: 10px;"></p>
-<p>因此利用 line-height 的这个属性设置单行文字的垂直居中也就很好理解了：<br>例如，想让一行 font-size 为16px 的文字在高为 200px 的父元素里垂直居中，只需要把 line-height 设为 200px即可：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic23.png?imageView/2/w/350" style="margin-left: 10px"></p>
+<p>Top half-leading: 2px<br>Content area: 160x<br>Bottom half-leading: 2px<br>Total height: 20px<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic20.png?imageView/2/w/350"></p>
+<p>然而有时候,如果 line-height 小于 font-size 就造成 inline box 小于 content area。<br>例子： line-height 为 12px, font-size 为16px，显示效果就会这个样子：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic21.png?imageView/2/w/350"></p>
+<p>当然，line-height 也可以为0：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic22.png?imageView/2/w/350"></p>
+<p>因此利用 line-height 的这个属性设置单行文字的垂直居中也就很好理解了：<br>例如，想让一行 font-size 为16px 的文字在高为 200px 的父元素里垂直居中，只需要把 line-height 设为 200px即可：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic23.png?imageView/2/w/350"></p>
 <h2 id="inline-boxes-与-line-boxes"><a href="#inline-boxes-与-line-boxes" class="headerlink" title="inline boxes 与 line boxes"></a>inline boxes 与 line boxes</h2><p><font style="color:red">情况一</font><br>line box 高度取决于它内部最高的 inline box(或被替换的元素,如：图片)</p>
 <ol>
-<li><p>最高的 inline box 可以是匿名 inline box<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic24.png?imageView/2/w/350" style="margin-left: 10px;"></p>
+<li><p>最高的 inline box 可以是匿名 inline box<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic24.png?imageView/2/w/350"></p>
 </li>
-<li><p>也可以是增大 line-height 后的 inline box<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic25.png?imageView/2/w/350" style="margin-left: 10px;"></p>
+<li><p>也可以是增大 line-height 后的 inline box<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic25.png?imageView/2/w/350"></p>
 </li>
-<li><p>更大 font-size 的 inline box<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic26.png?imageView/2/w/350" style="margin-left: 10px;"></p>
+<li><p>更大 font-size 的 inline box<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic26.png?imageView/2/w/350"></p>
 </li>
-<li><p>存在上标或下标<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic27.png?imageView/2/w/350" style="margin-left: 10px;"></p>
+<li><p>存在上标或下标<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic27.png?imageView/2/w/350"></p>
 </li>
-<li><p>可替换元素，如一张图片<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic28.png?imageView/2/w/350" style="margin-left: 10px;"></p>
+<li><p>可替换元素，如一张图片<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic28.png?imageView/2/w/350"></p>
 </li>
 </ol>
-<p><font style="color:red">注意：</font> 当 inline box 带有 padding, margin, border时，inline box高度会超过 line box 的高度，但不会影响 line box.<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic29.png?imageView/2/w/350" style="margin-left: 10px;"></p>
+<p><font style="color:red">注意：</font> 当 inline box 带有 padding, margin, border时，inline box高度会超过 line box 的高度，但不会影响 line box.<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic29.png?imageView/2/w/350"></p>
 <p>这两者之间的关系准确地说应该是：line box 的高度是由它所有子元素(inline boxes)的高度计算得出的。具体来说就是子元素的最高点到最低点的高度。</p>
-<h2 id="font-size"><a href="#font-size" class="headerlink" title="font-size"></a>font-size</h2><p>到这里，有必要提一下 <a href="http://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align" target="_blank" rel="external">Deep dive CSS: font metrics, line-height and vertical-align - Vincent De Oliveira</a> 这篇文章了，国内也有译文，我认为知乎上这篇 <a href="https://zhuanlan.zhihu.com/p/25808995" target="_blank" rel="external">深入理解 CSS：字体度量、line-height 和 vertical-align</a> 翻译的更得我心，这里借鉴一下。<br>同样大小的字号，不同的字体显示出来的大小却是不一样的：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic3.png?imageView/2/w/350" style="margin-left: 10px"><br>原因就在于字体设计过程中的原理，这里就不细说了，有兴趣的同学可直接查看上面的原文或者译文，我们要知道的就是：以Catamaran字体为例，当我们设置 font-size:100px 时，这个字体放到 FontForge 中可以看到，上行线高度 ascender height 是110px,下行线高度 descender height 是54px,大写字母的高度 cap height 是68px, x-height 是49px, 所以计算文字高度是110px + 54px = 164px。这个计算出来的高度决定了 HTML 元素的 content-area（内容区域，上文提到的内容区），可以认为 content-area 就是 background 作用的区域。</p>
-<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic4.png?imageView/2/w/350" style="margin-left: 10px"></p>
+<h2 id="font-size"><a href="#font-size" class="headerlink" title="font-size"></a>font-size</h2><p>到这里，有必要提一下 <a href="http://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align" target="_blank" rel="external">Deep dive CSS: font metrics, line-height and vertical-align - Vincent De Oliveira</a> 这篇文章了，国内也有译文，我认为知乎上这篇 <a href="https://zhuanlan.zhihu.com/p/25808995" target="_blank" rel="external">深入理解 CSS：字体度量、line-height 和 vertical-align</a> 翻译的更得我心，这里借鉴一下。<br>同样大小的字号，不同的字体显示出来的大小却是不一样的：<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic3.png?imageView/2/w/350"><br>原因就在于字体设计过程中的原理，这里就不细说了，有兴趣的同学可直接查看上面的原文或者译文，我们要知道的就是：以Catamaran字体为例，当我们设置 font-size:100px 时，这个字体放到 FontForge 中可以看到，上行线高度 ascender height 是110px,下行线高度 descender height 是54px,大写字母的高度 cap height 是68px, x-height 是49px, 所以计算文字高度是110px + 54px = 164px。这个计算出来的高度决定了 HTML 元素的 content-area（内容区域，上文提到的内容区），可以认为 content-area 就是 background 作用的区域。</p>
+<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic4.png?imageView/2/w/350"></p>
 <p>所以对于 Catamaran这款字体， 1ex = 49px，1em = 100px，而不是 164px。（em 是基于 font-size，而不是基于计算出来的高度）</p>
 <h2 id="再说-line-height"><a href="#再说-line-height" class="headerlink" title="再说 line-height"></a>再说 line-height</h2><p>在 <a href="http://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align" target="_blank" rel="external">Deep dive CSS: font metrics, line-height and vertical-align</a> 这篇博文中作者提出一个概念： virtual-area,  一个内联元素有两个高度：content-area 高度和 virtual-area 高度。</p>
 <ul>
 <li>content-area 的高度是由字体度量定义的(我的理解就是 font-size);</li>
 <li>vitual-area 的高度就是 line-height，这个高度用于计算 line-box 的高度;</li>
 </ul>
-<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic11.png?imageView/2/w/350" style="margin-left: 10px"></p>
-<p>所以在这篇文章中认为 line-height 表示两个基线之间的距离是个谣言，在 CSS 里：line-height就是行高，就是这行文字所占的高度。可以理解为两行文本基线之间的距离，或者行与行之间的距离。<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic12.png?imageView/2/w/350" style="margin-left: 10px"></p>
+<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic11.png?imageView/2/w/350"></p>
+<p>所以在这篇文章中认为 line-height 表示两个基线之间的距离是个谣言，在 CSS 里：line-height就是行高，就是这行文字所占的高度。可以理解为两行文本基线之间的距离，或者行与行之间的距离。<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic12.png?imageView/2/w/350"></p>
 <p>virtual-area 和 content-area 高度的差距(即：line-height 和 font-size 的差距)叫做 leading。leading 的一半会被加到 content-area 顶部，另一半会被加到底部。因此 content-area 总是处于 virtual-area 的中间。</p>
 <p>当 line-height 的值是一个数字时，其实就是相对 font-size 的倍数，而不是相对于 content-area。所以 line-height:1 很有可能使得 virtual-area 比 content-area 矮，从而引发很多其他的问题。</p>
-<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic13.png?imageView/2/w/350" style="margin-left: 10px"></p>
+<p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic13.png?imageView/2/w/350"></p>
 <p>line-box 计算的一些细节：</p>
 <ul>
 <li>对于内联元素，padding 和 border 会增大 background 区域，但是不会增大 content-area（不是 line-box 的高度）。一般来说你无法再屏幕上看到 content-area。margin-top 和 margin-bottom 对两者都没有影响。</li>
@@ -716,9 +716,9 @@
 <p>这类内联元素，其高度是基于 height、margin、padding和 border 属性。如果你将其 height 设置为 auto 的话，那么其高度的取值就是 line-height，其 content-area 的取值也是 line-height。</p>
 </blockquote>
 <h2 id="vertical-align"><a href="#vertical-align" class="headerlink" title="vertical-align"></a>vertical-align</h2><p>vertical-align也是计算 line-box 高度的重要因素之一。我们甚至可以说 vertical-align 是内联格式化上下文（IFC）中最重要的属性。默认值是 baseline<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class">p </span>&#123;</div><div class="line">    font-family: Catamaran;</div><div class="line">    font-size: <span class="number">100</span>px;</div><div class="line">    line-height: <span class="number">200</span>px;</div><div class="line">&#125;</div><div class="line"><span class="params">&lt;p&gt;</span></div><div class="line">    <span class="params">&lt;span&gt;</span>Ba<span class="params">&lt;/span&gt;</span></div><div class="line">    <span class="params">&lt;span&gt;</span>Ba<span class="params">&lt;/span&gt;</span></div><div class="line"><span class="params">&lt;/p&gt;</span></div></pre></td></tr></table></figure></p>
-<p>这时两个 span 的 baseline 是等高的，line-box 的高度就是 span 的 line-height:<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic14.png?imageView/2/w/350" style="margin-left: 10px"></p>
+<p>这时两个 span 的 baseline 是等高的，line-box 的高度就是 span 的 line-height:<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic14.png?imageView/2/w/350"></p>
 <p>但是，如果第二个 span 的 font-size 变小了，<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">span</span><span class="selector-pseudo">:last-child</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">50px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>我们会发现 line-box 的高度变高了！<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic15.png?imageView/2/w/350" style="margin-left: 10px"></p>
+<p>我们会发现 line-box 的高度变高了！<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic15.png?imageView/2/w/350"></p>
 <p>另一个例子:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">    <span class="attribute">line-height</span>: <span class="number">200px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">span</span> &#123;</div><div class="line">    <span class="attribute">font-family</span>: Catamaran;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">100px</span>;</div><div class="line">&#125;</div><div class="line">&lt;p&gt;</div><div class="line">    &lt;span&gt;Ba&lt;/span&gt;</div><div class="line">&lt;/p&gt;</div></pre></td></tr></table></figure></p>
 <p>此时 line-box 的高度并不是 200px。这里要考虑到的问题是 p 有自己的 font-family，默认值是 serif。p 的 baseline 和 span 的 baseline 位置不一样，因此最终的 line-box 比我们预想的要高一些。出现这种问题是因为浏览器认为每个 line-box 的起始位置都有一个宽度为 0 的字符（CSS 文档将其称为 strut），并将其纳入 line-box 的高度的计算中。<br><img src="http://oummu6kih.bkt.clouddn.com/inline_pic16.png?imageView/2/w/350"></p>
 <p>顺便一说，vertical-align 的其他 4 个值有可能有点用：</p>
