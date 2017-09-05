@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://oeasy.coding.me/"/>
-  <updated>2017-08-28T14:30:48.322Z</updated>
+  <updated>2017-09-05T13:53:31.912Z</updated>
   <id>http://oeasy.coding.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://oeasy.coding.me/2017/08/18/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3css%E8%A1%8C%E9%AB%98/"/>
     <id>http://oeasy.coding.me/2017/08/18/深入理解css行高/</id>
     <published>2017-08-18T14:06:30.000Z</published>
-    <updated>2017-08-28T14:30:48.322Z</updated>
+    <updated>2017-09-05T13:53:31.912Z</updated>
     
     <content type="html"><![CDATA[<p>最近几天在学习 CSS 基础知识，一直被 line-height, inline-block, vertical-align折磨，搜了一下这方面资料，不搜不知道一搜吓一跳，实际上这块还是值得好好研究一下的，据说line-height 和 vertical-align 这两个属性算得上是 CSS 里最难的两个属性了。这篇文章算做一个记录吧。<br><a id="more"></a><br>既然是 CSS 中比较难的属性，总要有个切入点吧，思来想去觉得还是从 W3C 中关于 line-height 的定义说起吧：</p>
 <blockquote>
@@ -47,7 +47,6 @@
 <li>这里median 中线和 vertical-align: middle 又不是一个概念，middle 指的是基线往上 1/2 “x-height” 高度。近似为字母 “x” 交叉点的位置。</li>
 <li>x 不仅衍生出了 x-height 的概念，还进一步衍生出了 ex，1ex 就是一个 x 的高度，类似 1em 就是一个大写字母 M 的宽度。</li>
 </ol>
-<hr>
 <h3 id="基线，底线，顶线和中线"><a href="#基线，底线，顶线和中线" class="headerlink" title="基线，底线，顶线和中线"></a>基线，底线，顶线和中线</h3><p><img src="http://oummu6kih.bkt.clouddn.com/inline_pic2.png"></p>
 <ul>
 <li>顶线(top line): 蓝线</li>
@@ -56,7 +55,6 @@
 <li>底线(bottom line): 红线</li>
 </ul>
 <p>vertical-align 属性中 top, middle, baseline, bottom 就是和这四条线相关。</p>
-<hr>
 <h3 id="内容区"><a href="#内容区" class="headerlink" title="内容区"></a>内容区</h3><p>内容区(content-area)： 底线和顶线包裹的区域(行内元素可以通过 background-color属性显示出来)，内容区的大小依据 font-size 的值和字数进行变化。</p>
 <p><strong>这里要说明一下，这个所谓的内容区，通过查找一些资料结合我的理解，其实就是后面要提到的四个CSS boxes 中的一个： content-area</strong></p>
 <h3 id="行高，行距与半行距"><a href="#行高，行距与半行距" class="headerlink" title="行高，行距与半行距"></a>行高，行距与半行距</h3><p>行高(line-height):包括内容区与以内容区为基础对称拓展的空白区域，一般情况下，也可以认为是上下文本行的基线间的垂直距离，即图中两条绿线间垂直距离。</p>
